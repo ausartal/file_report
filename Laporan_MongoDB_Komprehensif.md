@@ -1,5 +1,5 @@
 # LAPORAN MATERI PEMBELAJARAN
-## DATABASE NoSQL - MongoDB & Integrasi dengan Aplikasi Web
+## DATABASE NoSQL - MongoDB dan Integrasi dengan Aplikasi Web
 
 ---
 
@@ -44,57 +44,57 @@ Pemrograman Web / Database Management
 - 1.4 Kekurangan MongoDB
 - 1.5 Karakteristik MongoDB
 
-## II. INSTALASI & SETUP
-- 2.1 Install MongoDB
-- 2.2 Setup Node.js Environment
+## II. INSTALASI DAN KONFIGURASI
+- 2.1 Instalasi MongoDB
+- 2.2 Konfigurasi Lingkungan Node.js
 - 2.3 Konfigurasi Mongoose
-- 2.4 Testing Connection
+- 2.4 Pengujian Koneksi
 
 ## III. INTEGRASI DENGAN NODE.JS
 - 3.1 Koneksi MongoDB Driver
 - 3.2 Koneksi dengan Mongoose
-- 3.3 Schema & Model Definition
-- 3.4 Middleware & Hooks
+- 3.3 Definisi Schema dan Model
+- 3.4 Middleware dan Hooks
 
-## IV. CRUD OPERATIONS
-- 4.1 Create Operation
-- 4.2 Read Operation
-- 4.3 Update Operation
-- 4.4 Delete Operation
-- 4.5 Query Operators & Filtering
+## IV. OPERASI CRUD
+- 4.1 Operasi Create
+- 4.2 Operasi Read
+- 4.3 Operasi Update
+- 4.4 Operasi Delete
+- 4.5 Query Operators dan Filtering
 
-## V. ADVANCED TOPICS
+## V. TOPIK LANJUTAN
 - 5.1 Aggregation Pipeline
-- 5.2 Indexing Strategies
-- 5.3 Relationships & Population
-- 5.4 Error Handling
+- 5.2 Strategi Indexing
+- 5.3 Relationships dan Population
+- 5.4 Penanganan Error
 
-## VI. BEST PRACTICES
-- 6.1 Performance Optimization
-- 6.2 Security Guidelines
-- 6.3 Code Organization
-- 6.4 Common Pitfalls
+## VI. PRAKTIK TERBAIK
+- 6.1 Optimasi Performa
+- 6.2 Panduan Keamanan
+- 6.3 Organisasi Kode
+- 6.4 Kesalahan Umum
 
-## VII. STUDI KASUS & PROJECT
-- 7.1 Project Structure
-- 7.2 Complete Example
-- 7.3 Source Code
+## VII. STUDI KASUS DAN PROJECT
+- 7.1 Struktur Project
+- 7.2 Implementasi Lengkap
+- 7.3 Kode Sumber
 
-## VIII. SOAL & JAWABAN
+## VIII. SOAL DAN JAWABAN
 - 8.1 Soal Konsep
 - 8.2 Soal Praktik
 - 8.3 Kunci Jawaban
 
-## IX. TROUBLESHOOTING & FAQ
-- 9.1 Common Errors
-- 9.2 Solutions
-- 9.3 FAQ
+## IX. TROUBLESHOOTING DAN FAQ
+- 9.1 Error Umum
+- 9.2 Solusi dan Tips
+- 9.3 Pertanyaan yang Sering Diajukan
 
-## X. REFERENSI & RESOURCES
-- 10.1 Dokumentasi Official
-- 10.2 Tools Recommendation
-- 10.3 Learning Resources
-- 10.4 Community Links
+## X. REFERENSI DAN SUMBER DAYA
+- 10.1 Dokumentasi Resmi
+- 10.2 Rekomendasi Tools
+- 10.3 Sumber Pembelajaran
+- 10.4 Tautan Komunitas
 
 ---
 
@@ -105,38 +105,38 @@ Pemrograman Web / Database Management
 
 ## 1.1 Definisi dan Konsep Dasar
 
-### Apa itu NoSQL?
+### Pengertian NoSQL
 
-**NoSQL** (Not Only SQL) adalah paradigma database yang dirancang untuk menangani data dalam skala besar dengan struktur yang fleksibel. Berbeda dengan database relasional tradisional, NoSQL tidak menggunakan tabel dengan skema tetap, melainkan menggunakan berbagai model data seperti dokumen, key-value, graph, atau column-family.
+NoSQL (Not Only SQL) adalah paradigma database yang dirancang untuk menangani data dalam skala besar dengan struktur yang fleksibel. Berbeda dengan database relasional tradisional, NoSQL tidak menggunakan tabel dengan skema tetap, melainkan menggunakan berbagai model data seperti dokumen, key-value, graph, atau column-family.
 
 ### Sejarah Perkembangan NoSQL
 
-**Timeline Perkembangan:**
+Berikut adalah timeline perkembangan teknologi NoSQL:
 
 ```
-1998 ─ Carlo Strozzi menciptakan istilah "NoSQL"
-2000 ─ Graph database Neo4j mulai dikembangkan
-2007 ─ Amazon merilis paper tentang Dynamo
-2008 ─ Facebook mengembangkan Cassandra
-2009 ─ MongoDB pertama kali dirilis sebagai open-source
-2010 ─ Istilah "NoSQL" dipopulerkan untuk non-relational databases
-2012 ─ MongoDB mencapai adopsi massal
-2015+ ─ NoSQL menjadi standar untuk aplikasi modern
+1998 - Carlo Strozzi menciptakan istilah "NoSQL"
+2000 - Graph database Neo4j mulai dikembangkan
+2007 - Amazon merilis paper tentang Dynamo
+2008 - Facebook mengembangkan Cassandra
+2009 - MongoDB pertama kali dirilis sebagai open-source
+2010 - Istilah "NoSQL" dipopulerkan untuk non-relational databases
+2012 - MongoDB mencapai adopsi massal
+2015 - NoSQL menjadi standar untuk aplikasi modern
 ```
 
-### Mengapa NoSQL Muncul?
+### Latar Belakang Kemunculan NoSQL
 
-NoSQL muncul sebagai solusi untuk mengatasi keterbatasan database relasional:
+NoSQL muncul sebagai solusi untuk mengatasi keterbatasan database relasional dalam menghadapi tantangan berikut:
 
-1. **Volume Data Besar** - Pertumbuhan data eksponensial dari web, mobile, IoT
-2. **Velocity** - Kecepatan data yang masuk sangat tinggi (real-time)
+1. **Volume Data Besar** - Pertumbuhan data eksponensial dari web, mobile, dan IoT
+2. **Velocity** - Kecepatan data yang masuk sangat tinggi secara real-time
 3. **Variety** - Keragaman tipe data (structured, semi-structured, unstructured)
-4. **Scalability** - Kebutuhan untuk scale horizontal dengan mudah
-5. **Flexibility** - Perubahan struktur data yang cepat dalam development
+4. **Scalability** - Kebutuhan untuk melakukan horizontal scaling dengan mudah
+5. **Flexibility** - Perubahan struktur data yang cepat dalam siklus pengembangan
 
 ### CAP Theorem
 
-CAP Theorem adalah prinsip fundamental dalam sistem database terdistribusi yang menyatakan bahwa sistem hanya dapat memenuhi **maksimal 2 dari 3** properti berikut:
+CAP Theorem adalah prinsip fundamental dalam sistem database terdistribusi yang menyatakan bahwa sistem hanya dapat memenuhi maksimal 2 dari 3 properti berikut:
 
 ```
                  C (Consistency)
@@ -154,37 +154,37 @@ CAP Theorem adalah prinsip fundamental dalam sistem database terdistribusi yang 
         (Availability)    (Partition Tolerance)
 ```
 
-**Penjelasan:**
+Penjelasan masing-masing properti:
 
 - **Consistency (C)**: Semua node melihat data yang sama pada waktu yang sama
-- **Availability (A)**: Setiap request mendapat response (sukses/gagal)
+- **Availability (A)**: Setiap request mendapat response (sukses atau gagal)
 - **Partition Tolerance (P)**: Sistem tetap berfungsi meskipun ada network partition
 
-**Kategori Database:**
+Kategori database berdasarkan CAP Theorem:
 
 - **CA**: MySQL, PostgreSQL - Tidak partition tolerant
 - **CP**: MongoDB, HBase - Mungkin tidak available saat partition
 - **AP**: Cassandra, DynamoDB - Eventually consistent
 
-### Kapan Menggunakan NoSQL vs SQL?
+### Panduan Pemilihan NoSQL vs SQL
 
 **Gunakan NoSQL ketika:**
 
-✅ Data tidak terstruktur atau semi-terstruktur  
-✅ Skema data sering berubah  
-✅ Perlu horizontal scaling  
-✅ Performa read/write tinggi lebih penting dari konsistensi ketat  
-✅ Bekerja dengan big data atau real-time analytics  
-✅ Rapid development dan iterasi cepat  
+- Data tidak terstruktur atau semi-terstruktur
+- Skema data sering berubah
+- Membutuhkan horizontal scaling
+- Performa read/write tinggi lebih penting dari konsistensi ketat
+- Bekerja dengan big data atau real-time analytics
+- Memerlukan rapid development dan iterasi cepat
 
 **Gunakan SQL ketika:**
 
-✅ Data terstruktur dengan relasi kompleks  
-✅ Membutuhkan ACID transactions yang ketat  
-✅ Query kompleks dengan JOIN banyak tabel  
-✅ Data consistency adalah prioritas utama  
-✅ Reporting dan analytics kompleks  
-✅ Skema stabil dan well-defined  
+- Data terstruktur dengan relasi kompleks
+- Membutuhkan ACID transactions yang ketat
+- Query kompleks dengan JOIN banyak tabel
+- Data consistency adalah prioritas utama
+- Reporting dan analytics kompleks
+- Skema stabil dan terdefinisi dengan baik
 
 ---
 
@@ -317,13 +317,13 @@ db.users.aggregate([
 │  └─────────┘          └─────────┘  │
 │                                     │
 │  Kelebihan:                         │
-│  ✓ Sederhana                        │
-│  ✓ Tidak perlu ubah aplikasi        │
+│  - Sederhana                        │
+│  - Tidak perlu ubah aplikasi        │
 │                                     │
 │  Kekurangan:                        │
-│  ✗ Ada limit hardware               │
-│  ✗ Mahal                            │
-│  ✗ Single point of failure          │
+│  - Ada limit hardware               │
+│  - Mahal                            │
+│  - Single point of failure          │
 └────────────────────────────────────┘
 ```
 
@@ -342,13 +342,13 @@ db.users.aggregate([
 │  └───────┘      └──┘└──┘└──┘└──┘  │
 │                                     │
 │  Kelebihan:                         │
-│  ✓ Tidak ada limit teoritis         │
-│  ✓ Cost-effective                   │
-│  ✓ High availability                │
+│  - Tidak ada limit teoritis         │
+│  - Cost-effective                   │
+│  - High availability                │
 │                                     │
 │  Kekurangan:                        │
-│  ✗ Kompleksitas lebih tinggi        │
-│  ✗ Eventual consistency             │
+│  - Kompleksitas lebih tinggi        │
+│  - Eventual consistency             │
 └────────────────────────────────────┘
 ```
 
@@ -356,7 +356,7 @@ db.users.aggregate([
 
 **ACID (SQL):**
 
-- **Atomicity**: Transaksi all-or-nothing
+- **Atomicity**: Transaksi bersifat all-or-nothing
 - **Consistency**: Data selalu dalam state valid
 - **Isolation**: Transaksi tidak saling mengganggu
 - **Durability**: Data tersimpan permanen setelah commit
@@ -364,23 +364,23 @@ db.users.aggregate([
 **BASE (NoSQL):**
 
 - **Basically Available**: Sistem selalu merespons
-- **Soft state**: State bisa berubah seiring waktu
+- **Soft state**: State dapat berubah seiring waktu
 - **Eventually consistent**: Konsistensi tercapai setelah beberapa waktu
 
-### Use Case Comparison Matrix
+### Matriks Perbandingan Use Case
 
 | Skenario | SQL | NoSQL | Rekomendasi |
 |----------|-----|-------|-------------|
-| E-commerce Transactions | ✅ Excellent | ⚠️ Good | SQL (butuh ACID) |
-| Product Catalog | ⚠️ Good | ✅ Excellent | NoSQL (flexible schema) |
-| User Sessions | ❌ Poor | ✅ Excellent | NoSQL (key-value) |
-| Financial Reports | ✅ Excellent | ⚠️ Good | SQL (complex queries) |
-| Social Media Posts | ⚠️ Good | ✅ Excellent | NoSQL (high write) |
-| Real-time Analytics | ❌ Poor | ✅ Excellent | NoSQL (speed) |
-| Inventory Management | ✅ Excellent | ⚠️ Good | SQL (consistency) |
-| IoT Sensor Data | ❌ Poor | ✅ Excellent | NoSQL (volume) |
-| Content Management | ⚠️ Good | ✅ Excellent | NoSQL (flexibility) |
-| Banking Transactions | ✅ Excellent | ❌ Poor | SQL (ACID critical) |
+| E-commerce Transactions | Sangat Baik | Baik | SQL (butuh ACID) |
+| Product Catalog | Baik | Sangat Baik | NoSQL (flexible schema) |
+| User Sessions | Kurang Baik | Sangat Baik | NoSQL (key-value) |
+| Financial Reports | Sangat Baik | Baik | SQL (complex queries) |
+| Social Media Posts | Baik | Sangat Baik | NoSQL (high write) |
+| Real-time Analytics | Kurang Baik | Sangat Baik | NoSQL (speed) |
+| Inventory Management | Sangat Baik | Baik | SQL (consistency) |
+| IoT Sensor Data | Kurang Baik | Sangat Baik | NoSQL (volume) |
+| Content Management | Baik | Sangat Baik | NoSQL (flexibility) |
+| Banking Transactions | Sangat Baik | Kurang Baik | SQL (ACID critical) |
 
 ---
 
@@ -389,7 +389,7 @@ db.users.aggregate([
 
 ### 1. Fleksibilitas Schema
 
-MongoDB menggunakan **dynamic schema** yang memungkinkan dokumen dalam collection yang sama memiliki struktur berbeda.
+MongoDB menggunakan dynamic schema yang memungkinkan dokumen dalam collection yang sama memiliki struktur berbeda.
 
 ```javascript
 // Dokumen 1 - User dengan alamat lengkap
@@ -420,7 +420,7 @@ MongoDB menggunakan **dynamic schema** yang memungkinkan dokumen dalam collectio
 
 ### 3. Horizontal Scalability
 
-MongoDB mendukung **sharding** untuk distribusi data across multiple servers:
+MongoDB mendukung sharding untuk distribusi data ke beberapa server:
 
 ```
 ┌─────────────────────────────────────────┐
@@ -428,11 +428,11 @@ MongoDB mendukung **sharding** untuk distribusi data across multiple servers:
 ├─────────────────────────────────────────┤
 │                                          │
 │  Client Application                      │
-│         ↓                                │
+│         |                                │
 │    mongos (Router)                       │
-│         ↓                                │
+│         |                                │
 │  ┌──────┴──────┬──────────┬──────────┐  │
-│  ↓             ↓          ↓          ↓  │
+│  |             |          |          |  │
 │ Shard 1     Shard 2    Shard 3    Shard 4│
 │ (Data A)    (Data B)   (Data C)   (Data D)│
 │                                          │
@@ -462,7 +462,7 @@ db.orders.aggregate([
 
 ### 5. High Availability
 
-**Replica Sets** menyediakan redundancy dan automatic failover:
+Replica Sets menyediakan redundancy dan automatic failover:
 
 ```
 ┌─────────────────────────────────────┐
@@ -471,9 +471,9 @@ db.orders.aggregate([
 │                                      │
 │     Primary Node                     │
 │     (Read/Write)                     │
-│          ↓                           │
+│          |                           │
 │    ┌─────┴─────┐                    │
-│    ↓           ↓                    │
+│    |           |                    │
 │ Secondary   Secondary                │
 │ (Read Only) (Read Only)              │
 │                                      │
@@ -483,7 +483,7 @@ db.orders.aggregate([
 
 ### 6. Document-Oriented
 
-Data disimpan dalam format **BSON** (Binary JSON) yang natural untuk aplikasi:
+Data disimpan dalam format BSON (Binary JSON) yang natural untuk aplikasi:
 
 ```javascript
 {
@@ -507,7 +507,7 @@ Data disimpan dalam format **BSON** (Binary JSON) yang natural untuk aplikasi:
 
 ## 1.4 Kekurangan MongoDB
 
-### 1. Memory Usage Tinggi
+### 1. Penggunaan Memory Tinggi
 
 MongoDB membutuhkan RAM yang besar untuk performa optimal:
 
@@ -517,12 +517,12 @@ MongoDB membutuhkan RAM yang besar untuk performa optimal:
 
 **Solusi:**
 - Gunakan sharding untuk distribusi data
-- Optimize indexes
+- Optimasi indexes
 - Upgrade RAM server
 
-### 2. JOIN Complexity
+### 2. Kompleksitas JOIN
 
-MongoDB tidak mendukung JOIN seperti SQL. Harus menggunakan:
+MongoDB tidak mendukung JOIN seperti SQL. Alternatif yang tersedia:
 
 **Embedding (Denormalization):**
 
@@ -541,25 +541,25 @@ MongoDB tidak mendukung JOIN seperti SQL. Harus menggunakan:
 **Referencing + Population:**
 
 ```javascript
-// Data terpisah, perlu multiple queries
+// Data terpisah, memerlukan multiple queries
 // Collection: users
 { "_id": 1, "name": "Alice" }
 
 // Collection: orders
 { "_id": 101, "user_id": 1, "product": "Laptop" }
 
-// Perlu 2 queries atau $lookup
+// Memerlukan 2 queries atau $lookup
 ```
 
-### 3. Transaction Limitations
+### 3. Keterbatasan Transaksi
 
-Sebelum MongoDB 4.0, tidak ada multi-document transactions:
+Sebelum MongoDB 4.0, tidak tersedia multi-document transactions:
 
-- Single document operations adalah atomic
-- Multi-document transactions ada overhead performa
+- Single document operations bersifat atomic
+- Multi-document transactions memiliki overhead performa
 - Tidak se-mature SQL transactions
 
-### 4. Data Duplication
+### 4. Duplikasi Data
 
 Denormalization menyebabkan data redundancy:
 
@@ -578,15 +578,15 @@ Denormalization menyebabkan data redundancy:
 // Jika email Alice berubah, harus update semua dokumen
 ```
 
-### 5. Storage Overhead
+### 5. Overhead Penyimpanan
 
-BSON format dan indexing membutuhkan storage lebih besar dibanding SQL.
+Format BSON dan indexing membutuhkan storage lebih besar dibanding SQL.
 
-### 6. Learning Curve
+### 6. Kurva Pembelajaran
 
 - Paradigma berbeda dari SQL
-- Perlu memahami kapan embed vs reference
-- Query syntax berbeda
+- Perlu memahami kapan menggunakan embed vs reference
+- Sintaks query berbeda
 
 ---
 
@@ -594,7 +594,7 @@ BSON format dan indexing membutuhkan storage lebih besar dibanding SQL.
 
 ### 1. Document-Oriented Database
 
-MongoDB menyimpan data dalam bentuk **dokumen BSON** (Binary JSON):
+MongoDB menyimpan data dalam bentuk dokumen BSON (Binary JSON):
 
 **Struktur Dokumen:**
 
@@ -613,19 +613,19 @@ MongoDB menyimpan data dalam bentuk **dokumen BSON** (Binary JSON):
 }
 ```
 
-**BSON vs JSON:**
+**Perbandingan BSON vs JSON:**
 
 | Aspek | JSON | BSON |
 |-------|------|------|
 | Format | Text-based | Binary |
-| Size | Lebih besar | Lebih kecil |
-| Speed | Slower parsing | Faster parsing |
-| Data Types | Limited (string, number, boolean, null, array, object) | Extended (Date, ObjectId, Binary, Regex, etc) |
-| Readability | Human-readable | Machine-readable |
+| Ukuran | Lebih besar | Lebih kecil |
+| Kecepatan | Parsing lebih lambat | Parsing lebih cepat |
+| Tipe Data | Terbatas (string, number, boolean, null, array, object) | Extended (Date, ObjectId, Binary, Regex, dll) |
+| Keterbacaan | Human-readable | Machine-readable |
 
-### 2. Schema Flexibility
+### 2. Fleksibilitas Schema
 
-**Dynamic Schema** memungkinkan evolusi data tanpa migration:
+Dynamic Schema memungkinkan evolusi data tanpa migration:
 
 ```javascript
 // Version 1 - Simple user
@@ -634,14 +634,14 @@ MongoDB menyimpan data dalam bentuk **dokumen BSON** (Binary JSON):
   "email": "alice@example.com"
 }
 
-// Version 2 - Add phone (tidak perlu ALTER TABLE)
+// Version 2 - Penambahan phone (tidak perlu ALTER TABLE)
 {
   "name": "Bob",
   "email": "bob@example.com",
   "phone": "+62812345678"
 }
 
-// Version 3 - Add nested address
+// Version 3 - Penambahan nested address
 {
   "name": "Charlie",
   "email": "charlie@example.com",
@@ -653,7 +653,7 @@ MongoDB menyimpan data dalam bentuk **dokumen BSON** (Binary JSON):
 }
 ```
 
-### 3. Indexing Capabilities
+### 3. Kemampuan Indexing
 
 MongoDB mendukung berbagai jenis index:
 
@@ -687,7 +687,7 @@ db.articles.createIndex({ content: "text" })  // Full-text search
 db.places.createIndex({ location: "2dsphere" })  // Geo queries
 ```
 
-**Diagram Index:**
+**Diagram Struktur Index:**
 
 ```
 ┌─────────────────────────────────────┐
@@ -702,7 +702,7 @@ db.places.createIndex({ location: "2dsphere" })  // Geo queries
 │  │ 2    │ Bob    │ b@ex.com   │     │
 │  │ 3    │ Charlie│ c@ex.com   │     │
 │  └────────────────────────────┘     │
-│           ↓                          │
+│           |                          │
 │  Index on email:                     │
 │  ┌────────────────┬──────┐          │
 │  │ a@ex.com       │  1   │          │
@@ -715,7 +715,7 @@ db.places.createIndex({ location: "2dsphere" })  // Geo queries
 
 ### 4. Replication
 
-**Replica Set** menyediakan data redundancy dan high availability:
+Replica Set menyediakan data redundancy dan high availability:
 
 **Arsitektur:**
 
@@ -733,7 +733,7 @@ db.places.createIndex({ location: "2dsphere" })  // Geo queries
 │      Replication                          │
 │             │                             │
 │      ┌──────┴───────┐                    │
-│      ↓              ↓                    │
+│      |              |                    │
 │  SECONDARY      SECONDARY                 │
 │ ┌──────────┐   ┌──────────┐             │
 │ │  Node 2  │   │  Node 3  │             │
@@ -747,14 +747,14 @@ db.places.createIndex({ location: "2dsphere" })  // Geo queries
 
 **Keuntungan Replication:**
 
-✅ **High Availability**: Automatic failover  
-✅ **Data Redundancy**: Multiple copies  
-✅ **Read Scalability**: Read dari secondary  
-✅ **Disaster Recovery**: Backup otomatis  
+- **High Availability**: Automatic failover
+- **Data Redundancy**: Multiple copies
+- **Read Scalability**: Read dari secondary
+- **Disaster Recovery**: Backup otomatis
 
 ### 5. Sharding
 
-**Sharding** adalah metode distribusi data horizontal across multiple machines:
+Sharding adalah metode distribusi data secara horizontal ke beberapa mesin:
 
 **Arsitektur Sharded Cluster:**
 
@@ -764,22 +764,22 @@ db.places.createIndex({ location: "2dsphere" })  // Geo queries
 ├────────────────────────────────────────────┤
 │                                             │
 │  Application                                │
-│       ↓                                     │
+│       |                                     │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐    │
 │  │ mongos  │  │ mongos  │  │ mongos  │    │
 │  │(Router) │  │(Router) │  │(Router) │    │
 │  └────┬────┘  └────┬────┘  └────┬────┘    │
 │       └────────────┼────────────┘          │
-│                    ↓                        │
+│                    |                        │
 │         Config Servers (Metadata)           │
 │              ┌──────────┐                   │
 │              │ Config   │                   │
 │              │ Replica  │                   │
 │              │   Set    │                   │
 │              └─────┬────┘                   │
-│                    ↓                        │
+│                    |                        │
 │  ┌─────────┬──────┴──────┬─────────┐      │
-│  ↓         ↓             ↓         ↓      │
+│  |         |             |         |      │
 │ Shard 1  Shard 2      Shard 3   Shard 4    │
 │ (0-25%)  (26-50%)    (51-75%)  (76-100%)   │
 │ Replica  Replica     Replica   Replica      │
@@ -788,13 +788,13 @@ db.places.createIndex({ location: "2dsphere" })  // Geo queries
 └────────────────────────────────────────────┘
 ```
 
-**Shard Key Strategy:**
+**Strategi Shard Key:**
 
 ```javascript
 // Range-based sharding
 sh.shardCollection("mydb.users", { user_id: 1 })
 
-// Hash-based sharding (better distribution)
+// Hash-based sharding (distribusi lebih merata)
 sh.shardCollection("mydb.users", { user_id: "hashed" })
 
 // Compound shard key
@@ -803,59 +803,60 @@ sh.shardCollection("mydb.orders", { customer_id: 1, order_date: 1 })
 
 **Keuntungan Sharding:**
 
-✅ **Horizontal Scalability**: Tambah server untuk kapasitas  
-✅ **Better Performance**: Parallel processing  
-✅ **No Single Point of Failure**: Distributed system  
+- **Horizontal Scalability**: Menambah server untuk meningkatkan kapasitas
+- **Better Performance**: Parallel processing
+- **No Single Point of Failure**: Distributed system
 
 ---
 
 <div style="page-break-after: always;"></div>
 
 
-# II. INSTALASI & SETUP
 
-## 2.1 Install MongoDB
+# II. INSTALASI DAN KONFIGURASI
+
+## 2.1 Instalasi MongoDB
 
 ### Instalasi MongoDB di Windows
 
-**Step 1: Download MongoDB**
+**Langkah 1: Unduh MongoDB**
 
 1. Kunjungi https://www.mongodb.com/try/download/community
 2. Pilih versi terbaru untuk Windows
-3. Download file `.msi` installer
+3. Unduh file installer berformat `.msi`
 
-**Step 2: Install MongoDB**
+**Langkah 2: Proses Instalasi**
 
 ```
 1. Jalankan file .msi installer
 2. Pilih "Complete" installation
-3. Install MongoDB as a Service (recommended)
+3. Install MongoDB as a Service (direkomendasikan)
 4. Install MongoDB Compass (GUI tool)
 5. Klik "Install"
 ```
 
-**Step 3: Verifikasi Instalasi**
+**Langkah 3: Verifikasi Instalasi**
 
 ```bash
 # Buka Command Prompt
 mongod --version
 
-# Output:
+# Output yang diharapkan:
 # db version v7.0.0
 # Build Info: ...
 ```
 
-**Step 4: Jalankan MongoDB**
+**Langkah 4: Menjalankan MongoDB**
 
 ```bash
-# MongoDB sudah running sebagai service
+# MongoDB sudah berjalan sebagai service
 # Cek status:
 net start MongoDB
 
 # Akses MongoDB Shell:
 mongosh
 
-# Output:
+# Output yang diharapkan:
 # Current Mongosh Log ID: ...
 # Connecting to: mongodb://127.0.0.1:27017
 # test>
@@ -867,7 +868,7 @@ mongosh
 # Import public key
 wget -qO - https://www.mongodb.org/static/pgp/server-7.0.asc | sudo apt-key add -
 
-# Create list file
+# Buat list file
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 
 # Update package database
@@ -876,13 +877,13 @@ sudo apt-get update
 # Install MongoDB
 sudo apt-get install -y mongodb-org
 
-# Start MongoDB
+# Jalankan MongoDB
 sudo systemctl start mongod
 
-# Enable auto-start
+# Aktifkan auto-start
 sudo systemctl enable mongod
 
-# Verify
+# Verifikasi
 mongod --version
 ```
 
@@ -893,10 +894,10 @@ mongod --version
 brew tap mongodb/brew
 brew install mongodb-community@7.0
 
-# Start MongoDB
+# Jalankan MongoDB
 brew services start mongodb-community@7.0
 
-# Verify
+# Verifikasi
 mongod --version
 ```
 
@@ -904,21 +905,21 @@ mongod --version
 
 **Keuntungan MongoDB Atlas:**
 
-✅ Fully managed (no server maintenance)  
-✅ Free tier available (512MB storage)  
-✅ Automatic backups  
-✅ Global deployment  
-✅ Built-in security  
+- Fully managed (tanpa maintenance server)
+- Free tier tersedia (512MB storage)
+- Automatic backups
+- Global deployment
+- Built-in security
 
-**Setup MongoDB Atlas:**
+**Langkah Konfigurasi MongoDB Atlas:**
 
-**Step 1: Create Account**
+**Langkah 1: Buat Akun**
 
 1. Kunjungi https://www.mongodb.com/cloud/atlas
-2. Sign up dengan email atau Google account
+2. Daftar dengan email atau akun Google
 3. Verifikasi email
 
-**Step 2: Create Cluster**
+**Langkah 2: Buat Cluster**
 
 ```
 1. Klik "Build a Database"
@@ -929,7 +930,7 @@ mongod --version
 6. Klik "Create Cluster"
 ```
 
-**Step 3: Setup Database Access**
+**Langkah 3: Konfigurasi Database Access**
 
 ```
 1. Database Access → Add New Database User
@@ -939,43 +940,43 @@ mongod --version
 5. Add User
 ```
 
-**Step 4: Setup Network Access**
+**Langkah 4: Konfigurasi Network Access**
 
 ```
 1. Network Access → Add IP Address
 2. Pilih "Allow Access from Anywhere" (0.0.0.0/0)
-   (Untuk development only, production gunakan specific IP)
+   (Hanya untuk development, production gunakan specific IP)
 3. Confirm
 ```
 
-**Step 5: Get Connection String**
+**Langkah 5: Dapatkan Connection String**
 
 ```
 1. Clusters → Connect
 2. Pilih "Connect your application"
 3. Driver: Node.js
 4. Version: 5.5 or later
-5. Copy connection string:
+5. Salin connection string:
 
 mongodb+srv://admin:<password>@myfirstcluster.xxxxx.mongodb.net/?retryWrites=true&w=majority
 ```
 
 ---
 
-## 2.2 Setup Node.js Environment
+## 2.2 Konfigurasi Lingkungan Node.js
 
-### Install Node.js
+### Instalasi Node.js
 
 **Windows:**
 
 ```
-1. Download dari https://nodejs.org/
-2. Pilih LTS version
+1. Unduh dari https://nodejs.org/
+2. Pilih versi LTS
 3. Jalankan installer
 4. Ikuti wizard installation
 ```
 
-**Verify Installation:**
+**Verifikasi Instalasi:**
 
 ```bash
 node --version
@@ -985,14 +986,14 @@ npm --version
 # 10.2.4
 ```
 
-### Create Project
+### Membuat Project
 
 ```bash
 # Buat folder project
 mkdir mongodb-project
 cd mongodb-project
 
-# Initialize npm
+# Inisialisasi npm
 npm init -y
 
 # Output: package.json created
@@ -1016,7 +1017,7 @@ npm init -y
 }
 ```
 
-### Install Dependencies
+### Instalasi Dependencies
 
 ```bash
 # Install MongoDB driver
@@ -1032,7 +1033,7 @@ npm install dotenv
 npm install --save-dev nodemon
 ```
 
-**package.json setelah install:**
+**package.json setelah instalasi:**
 
 ```json
 {
@@ -1047,9 +1048,9 @@ npm install --save-dev nodemon
 }
 ```
 
-### Setup Environment Variables
+### Konfigurasi Environment Variables
 
-**Create .env file:**
+**Buat file .env:**
 
 ```bash
 # .env
@@ -1061,7 +1062,7 @@ PORT=3000
 NODE_ENV=development
 ```
 
-**Create .gitignore:**
+**Buat file .gitignore:**
 
 ```
 node_modules/
@@ -1069,7 +1070,7 @@ node_modules/
 *.log
 ```
 
-### Project Structure
+### Struktur Project
 
 ```
 mongodb-project/
@@ -1092,7 +1093,7 @@ mongodb-project/
 
 ## 2.3 Konfigurasi Mongoose
 
-### Basic Connection
+### Koneksi Dasar
 
 **config/database.js:**
 
@@ -1117,7 +1118,7 @@ const connectDB = async () => {
 module.exports = connectDB;
 ```
 
-### Connection dengan Options
+### Koneksi dengan Options Lengkap
 
 ```javascript
 const mongoose = require('mongoose');
@@ -1127,7 +1128,7 @@ const options = {
   useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
-  family: 4, // Use IPv4
+  family: 4, // Gunakan IPv4
   maxPoolSize: 10, // Connection pool
   minPoolSize: 5,
   maxIdleTimeMS: 10000,
@@ -1145,7 +1146,7 @@ mongoose.connect(process.env.MONGODB_URI, options)
 ```javascript
 const mongoose = require('mongoose');
 
-// Connection events
+// Event koneksi
 mongoose.connection.on('connected', () => {
   console.log('Mongoose connected to MongoDB');
 });
@@ -1166,7 +1167,7 @@ process.on('SIGINT', async () => {
 });
 ```
 
-### Connection String Format
+### Format Connection String
 
 **Local MongoDB:**
 
@@ -1187,7 +1188,7 @@ mongodb://username:password@localhost:27017/database_name
 mongodb+srv://username:password@cluster.mongodb.net/database_name?retryWrites=true&w=majority
 ```
 
-**Connection String Components:**
+**Komponen Connection String:**
 
 ```
 mongodb+srv://username:password@host:port/database?options
@@ -1195,16 +1196,16 @@ mongodb+srv://username:password@host:port/database?options
 ├── Protocol: mongodb:// atau mongodb+srv://
 ├── Credentials: username:password@
 ├── Host: cluster.mongodb.net
-├── Port: :27017 (optional untuk srv)
+├── Port: :27017 (opsional untuk srv)
 ├── Database: /database_name
 └── Options: ?retryWrites=true&w=majority
 ```
 
 ---
 
-## 2.4 Testing Connection
+## 2.4 Pengujian Koneksi
 
-### Test Script
+### Script Pengujian
 
 **test-connection.js:**
 
@@ -1214,35 +1215,35 @@ require('dotenv').config();
 
 const testConnection = async () => {
   try {
-    console.log('Attempting to connect to MongoDB...');
+    console.log('Mencoba koneksi ke MongoDB...');
     console.log('URI:', process.env.MONGODB_URI.replace(/\/\/.*@/, '//***:***@'));
     
     await mongoose.connect(process.env.MONGODB_URI);
     
-    console.log('✅ MongoDB connection successful!');
+    console.log('[BERHASIL] Koneksi MongoDB berhasil!');
     console.log('Database:', mongoose.connection.db.databaseName);
     console.log('Host:', mongoose.connection.host);
     console.log('Port:', mongoose.connection.port);
     
-    // Test write operation
+    // Test operasi write
     const testCollection = mongoose.connection.collection('test');
     await testCollection.insertOne({ test: 'Hello MongoDB', timestamp: new Date() });
-    console.log('✅ Write test successful!');
+    console.log('[BERHASIL] Write test berhasil!');
     
-    // Test read operation
+    // Test operasi read
     const doc = await testCollection.findOne({ test: 'Hello MongoDB' });
-    console.log('✅ Read test successful!');
+    console.log('[BERHASIL] Read test berhasil!');
     console.log('Document:', doc);
     
     // Cleanup
     await testCollection.deleteOne({ test: 'Hello MongoDB' });
-    console.log('✅ Delete test successful!');
+    console.log('[BERHASIL] Delete test berhasil!');
     
     await mongoose.connection.close();
-    console.log('Connection closed');
+    console.log('Koneksi ditutup');
     
   } catch (error) {
-    console.error('❌ Connection failed:', error.message);
+    console.error('[GAGAL] Koneksi gagal:', error.message);
     process.exit(1);
   }
 };
@@ -1250,29 +1251,29 @@ const testConnection = async () => {
 testConnection();
 ```
 
-**Run test:**
+**Menjalankan test:**
 
 ```bash
 node test-connection.js
 ```
 
-**Expected Output:**
+**Output yang Diharapkan:**
 
 ```
-Attempting to connect to MongoDB...
+Mencoba koneksi ke MongoDB...
 URI: mongodb://***:***@localhost:27017/mydb
-✅ MongoDB connection successful!
+[BERHASIL] Koneksi MongoDB berhasil!
 Database: mydb
 Host: localhost
 Port: 27017
-✅ Write test successful!
-✅ Read test successful!
+[BERHASIL] Write test berhasil!
+[BERHASIL] Read test berhasil!
 Document: { _id: ..., test: 'Hello MongoDB', timestamp: 2026-05-19T... }
-✅ Delete test successful!
-Connection closed
+[BERHASIL] Delete test berhasil!
+Koneksi ditutup
 ```
 
-### Main Application Setup
+### Setup Aplikasi Utama
 
 **index.js:**
 
@@ -1287,7 +1288,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
+// Koneksi ke MongoDB
 connectDB();
 
 // Routes
@@ -1312,7 +1313,7 @@ app.listen(PORT, () => {
 });
 ```
 
-**Run application:**
+**Menjalankan aplikasi:**
 
 ```bash
 npm start
@@ -1320,16 +1321,16 @@ npm start
 npm run dev
 ```
 
-### Troubleshooting Connection Issues
+### Troubleshooting Masalah Koneksi
 
-**Common Errors:**
+**Error Umum:**
 
 **1. MongoNetworkError: failed to connect**
 
 ```
-Penyebab: MongoDB server tidak running
+Penyebab: MongoDB server tidak berjalan
 Solusi: 
-- Cek apakah MongoDB service running
+- Periksa apakah MongoDB service berjalan
 - Windows: net start MongoDB
 - Linux: sudo systemctl start mongod
 ```
@@ -1339,18 +1340,18 @@ Solusi:
 ```
 Penyebab: Username/password salah
 Solusi:
-- Cek credentials di .env
+- Periksa credentials di file .env
 - Pastikan user sudah dibuat di database
 ```
 
 **3. MongooseServerSelectionError: connect ECONNREFUSED**
 
 ```
-Penyebab: Connection string salah atau firewall blocking
+Penyebab: Connection string salah atau firewall memblokir
 Solusi:
-- Cek connection string format
-- Cek firewall settings
-- Untuk Atlas, cek Network Access whitelist
+- Periksa format connection string
+- Periksa pengaturan firewall
+- Untuk Atlas, periksa Network Access whitelist
 ```
 
 **4. MongoParseError: Invalid connection string**
@@ -1358,17 +1359,17 @@ Solusi:
 ```
 Penyebab: Format connection string tidak valid
 Solusi:
-- Cek format: mongodb://host:port/database
+- Periksa format: mongodb://host:port/database
 - Encode special characters di password
 ```
 
-**Debug Tips:**
+**Tips Debugging:**
 
 ```javascript
-// Enable mongoose debug mode
+// Aktifkan mongoose debug mode
 mongoose.set('debug', true);
 
-// Log all queries
+// Log semua queries
 mongoose.set('debug', (collectionName, method, query, doc) => {
   console.log(`${collectionName}.${method}`, JSON.stringify(query), doc);
 });
@@ -1379,6 +1380,7 @@ mongoose.set('debug', (collectionName, method, query, doc) => {
 <div style="page-break-after: always;"></div>
 
 
+
 # III. INTEGRASI DENGAN NODE.JS
 
 ## 3.1 Koneksi MongoDB Driver
@@ -1387,13 +1389,13 @@ mongoose.set('debug', (collectionName, method, query, doc) => {
 
 MongoDB menyediakan official driver untuk Node.js yang memberikan low-level access ke database.
 
-**Install MongoDB Driver:**
+**Instalasi MongoDB Driver:**
 
 ```bash
 npm install mongodb
 ```
 
-### Basic Connection
+### Koneksi Dasar
 
 **db.js:**
 
@@ -1406,14 +1408,14 @@ const client = new MongoClient(uri);
 
 async function connect() {
   try {
-    // Connect to MongoDB
+    // Koneksi ke MongoDB
     await client.connect();
     console.log('Connected to MongoDB');
     
-    // Access database
+    // Akses database
     const database = client.db('mydb');
     
-    // Access collection
+    // Akses collection
     const collection = database.collection('users');
     
     return { database, collection };
@@ -1478,11 +1480,11 @@ const { MongoClient } = require('mongodb');
 
 const uri = 'mongodb://localhost:27017';
 
-// Connection pool options
+// Opsi connection pool
 const options = {
-  maxPoolSize: 10,        // Maximum connections
-  minPoolSize: 5,         // Minimum connections
-  maxIdleTimeMS: 10000,   // Close idle connections after 10s
+  maxPoolSize: 10,        // Maksimum koneksi
+  minPoolSize: 5,         // Minimum koneksi
+  maxIdleTimeMS: 10000,   // Tutup koneksi idle setelah 10 detik
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
 };
@@ -1504,7 +1506,7 @@ async function getDB() {
 module.exports = { getDB, client };
 ```
 
-**Usage:**
+**Penggunaan:**
 
 ```javascript
 const { getDB } = require('./db');
@@ -1520,29 +1522,29 @@ async function getUsers() {
 
 ## 3.2 Koneksi dengan Mongoose
 
-### Mengapa Mongoose?
+### Mengapa Menggunakan Mongoose?
 
-Mongoose adalah **ODM (Object Data Modeling)** library yang menyediakan:
+Mongoose adalah ODM (Object Data Modeling) library yang menyediakan:
 
-✅ **Schema validation** - Struktur data yang jelas  
-✅ **Type casting** - Automatic data type conversion  
-✅ **Query building** - Chainable query API  
-✅ **Middleware** - Pre/post hooks  
-✅ **Virtuals** - Computed properties  
-✅ **Population** - Automatic reference resolution  
+- **Schema validation** - Struktur data yang jelas dan tervalidasi
+- **Type casting** - Konversi tipe data otomatis
+- **Query building** - Chainable query API
+- **Middleware** - Pre/post hooks
+- **Virtuals** - Computed properties
+- **Population** - Resolusi referensi otomatis
 
-### Basic Mongoose Connection
+### Koneksi Dasar Mongoose
 
 ```javascript
 const mongoose = require('mongoose');
 
-// Simple connection
+// Koneksi sederhana
 mongoose.connect('mongodb://localhost:27017/mydb')
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('Connection error:', err));
 ```
 
-### Advanced Connection Setup
+### Konfigurasi Koneksi Lanjutan
 
 **config/database.js:**
 
@@ -1560,19 +1562,19 @@ class Database {
       useUnifiedTopology: true,
     })
     .then(() => {
-      console.log('✅ Database connected successfully');
+      console.log('Database connected successfully');
     })
     .catch((err) => {
-      console.error('❌ Database connection error:', err);
+      console.error('Database connection error:', err);
       process.exit(1);
     });
     
-    // Development logging
+    // Logging untuk development
     if (process.env.NODE_ENV === 'development') {
       mongoose.set('debug', true);
     }
     
-    // Connection events
+    // Event koneksi
     mongoose.connection.on('connected', () => {
       console.log('Mongoose connected to MongoDB');
     });
@@ -1605,13 +1607,13 @@ module.exports = new Database();
 ```javascript
 const mongoose = require('mongoose');
 
-// Primary database
+// Database primer
 const db1 = mongoose.createConnection('mongodb://localhost:27017/db1');
 
-// Secondary database
+// Database sekunder
 const db2 = mongoose.createConnection('mongodb://localhost:27017/db2');
 
-// Define models for each connection
+// Definisi model untuk masing-masing koneksi
 const User = db1.model('User', userSchema);
 const Product = db2.model('Product', productSchema);
 
@@ -1620,14 +1622,14 @@ module.exports = { User, Product };
 
 ---
 
-## 3.3 Schema & Model Definition
+## 3.3 Definisi Schema dan Model
 
-### Basic Schema
+### Schema Dasar
 
 ```javascript
 const mongoose = require('mongoose');
 
-// Define schema
+// Definisi schema
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -1636,7 +1638,7 @@ const userSchema = new mongoose.Schema({
   createdAt: Date
 });
 
-// Create model
+// Pembuatan model
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
@@ -1648,7 +1650,7 @@ module.exports = User;
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  // String types
+  // Tipe String
   name: {
     type: String,
     required: true,
@@ -1657,7 +1659,7 @@ const userSchema = new mongoose.Schema({
     maxlength: 50
   },
   
-  // Email dengan validation
+  // Email dengan validasi
   email: {
     type: String,
     required: [true, 'Email is required'],
@@ -1711,22 +1713,22 @@ const User = mongoose.model('User', userSchema);
 module.exports = User;
 ```
 
-### Schema Types
+### Tipe Data Schema
 
-| Type | Description | Example |
-|------|-------------|---------|
-| String | Text data | `name: String` |
-| Number | Numeric data | `age: Number` |
-| Date | Date/time | `createdAt: Date` |
+| Tipe | Deskripsi | Contoh |
+|------|-----------|--------|
+| String | Data teks | `name: String` |
+| Number | Data numerik | `age: Number` |
+| Date | Tanggal/waktu | `createdAt: Date` |
 | Boolean | true/false | `isActive: Boolean` |
 | ObjectId | MongoDB ID | `userId: mongoose.Schema.Types.ObjectId` |
-| Array | List of values | `tags: [String]` |
-| Mixed | Any type | `data: mongoose.Schema.Types.Mixed` |
-| Buffer | Binary data | `file: Buffer` |
-| Map | Key-value pairs | `metadata: Map` |
-| Decimal128 | High precision numbers | `price: mongoose.Schema.Types.Decimal128` |
+| Array | Daftar nilai | `tags: [String]` |
+| Mixed | Tipe apapun | `data: mongoose.Schema.Types.Mixed` |
+| Buffer | Data binary | `file: Buffer` |
+| Map | Pasangan key-value | `metadata: Map` |
+| Decimal128 | Angka presisi tinggi | `price: mongoose.Schema.Types.Decimal128` |
 
-### Schema Validation
+### Validasi Schema
 
 ```javascript
 const productSchema = new mongoose.Schema({
@@ -1777,7 +1779,7 @@ const productSchema = new mongoose.Schema({
 const Product = mongoose.model('Product', productSchema);
 ```
 
-### Custom Validation
+### Validasi Kustom
 
 ```javascript
 const userSchema = new mongoose.Schema({
@@ -1786,7 +1788,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: async function(username) {
-        // Check if username already exists
+        // Periksa apakah username sudah ada
         const user = await mongoose.models.User.findOne({ username });
         return !user;
       },
@@ -1799,7 +1801,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: function(password) {
-        // Password must contain uppercase, lowercase, number, special char
+        // Password harus mengandung huruf besar, kecil, angka, karakter khusus
         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
       },
       message: 'Password must be at least 8 characters with uppercase, lowercase, number, and special character'
@@ -1819,32 +1821,32 @@ const userSchema = new mongoose.Schema({
 });
 ```
 
-### Schema Options
+### Opsi Schema
 
 ```javascript
 const userSchema = new mongoose.Schema({
   name: String,
   email: String
 }, {
-  // Options
-  timestamps: true,           // Adds createdAt and updatedAt
-  versionKey: false,          // Removes __v field
-  collection: 'users',        // Custom collection name
-  strict: true,               // Only save fields in schema
-  strictQuery: false,         // Allow queries on non-schema fields
-  toJSON: { virtuals: true }, // Include virtuals in JSON
-  toObject: { virtuals: true } // Include virtuals in Object
+  // Opsi
+  timestamps: true,           // Menambahkan createdAt dan updatedAt
+  versionKey: false,          // Menghapus field __v
+  collection: 'users',        // Nama collection kustom
+  strict: true,               // Hanya simpan field yang ada di schema
+  strictQuery: false,         // Izinkan query pada field di luar schema
+  toJSON: { virtuals: true }, // Sertakan virtuals dalam JSON
+  toObject: { virtuals: true } // Sertakan virtuals dalam Object
 });
 ```
 
 ---
 
 
-## 3.4 Middleware & Hooks
+## 3.4 Middleware dan Hooks
 
-### Apa itu Middleware?
+### Pengertian Middleware
 
-Middleware (juga disebut hooks) adalah fungsi yang dijalankan pada tahap tertentu dalam lifecycle dokumen. Mongoose mendukung middleware untuk:
+Middleware (disebut juga hooks) adalah fungsi yang dijalankan pada tahap tertentu dalam lifecycle dokumen. Mongoose mendukung middleware untuk operasi berikut:
 
 - `validate`
 - `save`
@@ -1858,7 +1860,7 @@ Middleware (juga disebut hooks) adalah fungsi yang dijalankan pada tahap tertent
 
 ### Pre Middleware
 
-**Pre middleware** dijalankan **sebelum** operasi.
+Pre middleware dijalankan sebelum operasi dilaksanakan.
 
 ```javascript
 const userSchema = new mongoose.Schema({
@@ -1872,7 +1874,7 @@ const userSchema = new mongoose.Schema({
 userSchema.pre('save', function(next) {
   console.log('About to save user:', this.name);
   
-  // Set createdAt if not exists
+  // Set createdAt jika belum ada
   if (!this.createdAt) {
     this.createdAt = new Date();
   }
@@ -1882,7 +1884,7 @@ userSchema.pre('save', function(next) {
 
 // Pre-save dengan async/await
 userSchema.pre('save', async function(next) {
-  // Hash password before saving
+  // Hash password sebelum menyimpan
   if (this.isModified('password')) {
     const bcrypt = require('bcrypt');
     this.password = await bcrypt.hash(this.password, 10);
@@ -1893,7 +1895,7 @@ userSchema.pre('save', async function(next) {
 
 ### Post Middleware
 
-**Post middleware** dijalankan **setelah** operasi.
+Post middleware dijalankan setelah operasi selesai.
 
 ```javascript
 // Post-save middleware
@@ -1917,15 +1919,15 @@ userSchema.post('find', function(docs) {
 });
 ```
 
-### Practical Examples
+### Contoh Praktis
 
-**1. Password Hashing:**
+**1. Hashing Password:**
 
 ```javascript
 const bcrypt = require('bcrypt');
 
 userSchema.pre('save', async function(next) {
-  // Only hash if password is modified
+  // Hanya hash jika password dimodifikasi
   if (!this.isModified('password')) {
     return next();
   }
@@ -1939,13 +1941,13 @@ userSchema.pre('save', async function(next) {
   }
 });
 
-// Method to compare password
+// Method untuk membandingkan password
 userSchema.methods.comparePassword = async function(candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
 ```
 
-**2. Slug Generation:**
+**2. Pembuatan Slug:**
 
 ```javascript
 const slugify = require('slugify');
@@ -1973,14 +1975,14 @@ const userSchema = new mongoose.Schema({
   deletedAt: Date
 });
 
-// Override remove to soft delete
+// Override remove untuk soft delete
 userSchema.pre('remove', function(next) {
   this.deletedAt = new Date();
   this.save();
   next();
 });
 
-// Filter out deleted documents
+// Filter dokumen yang sudah dihapus
 userSchema.pre(/^find/, function(next) {
   this.where({ deletedAt: null });
   next();
@@ -2023,7 +2025,7 @@ productSchema.pre('save', function(next) {
 
 ### Virtual Properties
 
-Virtuals adalah properties yang tidak disimpan di database tapi bisa diakses seperti field biasa.
+Virtuals adalah properties yang tidak disimpan di database tetapi dapat diakses seperti field biasa.
 
 ```javascript
 const userSchema = new mongoose.Schema({
@@ -2044,7 +2046,7 @@ userSchema.virtual('fullName').set(function(name) {
   this.lastName = parts[1];
 });
 
-// Usage
+// Penggunaan
 const user = new User({ firstName: 'John', lastName: 'Doe' });
 console.log(user.fullName); // "John Doe"
 
@@ -2055,7 +2057,7 @@ console.log(user.lastName);  // "Smith"
 
 ### Instance Methods
 
-Methods yang bisa dipanggil pada document instance.
+Methods yang dapat dipanggil pada document instance.
 
 ```javascript
 userSchema.methods.getPublicProfile = function() {
@@ -2063,7 +2065,7 @@ userSchema.methods.getPublicProfile = function() {
     id: this._id,
     name: this.name,
     email: this.email
-    // password tidak di-include
+    // password tidak disertakan
   };
 };
 
@@ -2071,11 +2073,11 @@ userSchema.methods.isAdmin = function() {
   return this.role === 'admin';
 };
 
-// Usage
+// Penggunaan
 const user = await User.findById(userId);
 const profile = user.getPublicProfile();
 if (user.isAdmin()) {
-  // Admin logic
+  // Logika admin
 }
 ```
 
@@ -2101,7 +2103,7 @@ userSchema.statics.createWithDefaults = function(data) {
   });
 };
 
-// Usage
+// Penggunaan
 const user = await User.findByEmail('john@example.com');
 const activeUsers = await User.findActive();
 const newUser = await User.createWithDefaults({ name: 'Alice', email: 'alice@example.com' });
@@ -2109,7 +2111,7 @@ const newUser = await User.createWithDefaults({ name: 'Alice', email: 'alice@exa
 
 ### Query Helpers
 
-Custom query methods yang bisa di-chain.
+Custom query methods yang dapat di-chain.
 
 ```javascript
 userSchema.query.byAge = function(age) {
@@ -2124,7 +2126,7 @@ userSchema.query.sortByName = function() {
   return this.sort({ name: 1 });
 };
 
-// Usage
+// Penggunaan
 const users = await User
   .find()
   .byAge(25)
@@ -2132,7 +2134,7 @@ const users = await User
   .sortByName();
 ```
 
-### Complete Example
+### Contoh Lengkap
 
 ```javascript
 const mongoose = require('mongoose');
@@ -2220,10 +2222,10 @@ const User = mongoose.model('User', userSchema);
 module.exports = User;
 ```
 
-**Usage:**
+**Penggunaan:**
 
 ```javascript
-// Create user (password akan di-hash otomatis)
+// Membuat user (password akan di-hash otomatis)
 const user = await User.create({
   username: 'johndoe',
   email: 'john@example.com',
@@ -2232,16 +2234,16 @@ const user = await User.create({
   lastName: 'Doe'
 });
 
-// Get full name (virtual)
+// Mendapatkan full name (virtual)
 console.log(user.fullName); // "John Doe"
 
-// Compare password
+// Membandingkan password
 const isMatch = await user.comparePassword('SecurePass123');
 
 // Update last login
 await user.updateLastLogin();
 
-// Find by email (static method)
+// Mencari berdasarkan email (static method)
 const foundUser = await User.findByEmail('john@example.com');
 
 // Query active users
@@ -2253,9 +2255,10 @@ const activeUsers = await User.find().active();
 <div style="page-break-after: always;"></div>
 
 
-# IV. CRUD OPERATIONS
 
-## 4.1 Create Operation
+# IV. OPERASI CRUD
+
+## 4.1 Operasi Create
 
 ### insertOne() - Native Driver
 
@@ -2278,7 +2281,6 @@ async function insertOneExample() {
     });
     
     console.log('Inserted ID:', result.insertedId);
-    // Output: Inserted ID: 664a1b2c3d4e5f6g7h8i9j0k
     
   } finally {
     await client.close();
@@ -2319,7 +2321,7 @@ async function insertManyExample() {
 ```javascript
 const User = require('./models/User');
 
-// Method 1: Create instance then save
+// Metode 1: Buat instance lalu simpan
 async function createUserMethod1() {
   const user = new User({
     name: 'Alice',
@@ -2332,7 +2334,7 @@ async function createUserMethod1() {
   return user;
 }
 
-// Method 2: Using create()
+// Metode 2: Menggunakan create()
 async function createUserMethod2() {
   const user = await User.create({
     name: 'Bob',
@@ -2344,7 +2346,7 @@ async function createUserMethod2() {
   return user;
 }
 
-// Method 3: Create multiple
+// Metode 3: Membuat beberapa dokumen sekaligus
 async function createMultipleUsers() {
   const users = await User.create([
     { name: 'Charlie', email: 'charlie@example.com', age: 28 },
@@ -2371,71 +2373,71 @@ async function bulkInsert() {
   return result;
 }
 
-// With options
+// Dengan opsi
 async function bulkInsertWithOptions() {
   const users = [
     { name: 'User 1', email: 'user1@example.com' },
-    { name: 'User 2', email: 'duplicate@example.com' }, // Duplicate
+    { name: 'User 2', email: 'duplicate@example.com' }, // Duplikat
     { name: 'User 3', email: 'user3@example.com' }
   ];
   
   try {
     const result = await User.insertMany(users, {
-      ordered: false,  // Continue on error
-      rawResult: true  // Return full result
+      ordered: false,  // Lanjutkan meskipun ada error
+      rawResult: true  // Kembalikan hasil lengkap
     });
     console.log('Inserted:', result.insertedCount);
   } catch (error) {
-    console.error('Some documents failed:', error.writeErrors);
+    console.error('Beberapa dokumen gagal:', error.writeErrors);
   }
 }
 ```
 
-### Error Handling
+### Penanganan Error pada Create
 
 ```javascript
 async function createWithErrorHandling() {
   try {
     const user = await User.create({
       name: 'Test User',
-      email: 'invalid-email',  // Invalid format
-      age: 15  // Below minimum
+      email: 'invalid-email',  // Format tidak valid
+      age: 15  // Di bawah minimum
     });
   } catch (error) {
     if (error.name === 'ValidationError') {
-      // Validation errors
+      // Error validasi
       Object.keys(error.errors).forEach(key => {
         console.error(`${key}: ${error.errors[key].message}`);
       });
     } else if (error.code === 11000) {
-      // Duplicate key error
-      console.error('Email already exists');
+      // Error duplicate key
+      console.error('Email sudah terdaftar');
     } else {
-      console.error('Unknown error:', error);
+      console.error('Error tidak diketahui:', error);
     }
   }
 }
 ```
 
-### Practical Examples
+### Contoh Praktis
 
-**1. User Registration:**
+**1. Registrasi User:**
 
 ```javascript
 const bcrypt = require('bcrypt');
 
 async function registerUser(userData) {
   try {
-    // Check if email exists
+    // Periksa apakah email sudah ada
     const existingUser = await User.findOne({ email: userData.email });
     if (existingUser) {
-      throw new Error('Email already registered');
+      throw new Error('Email sudah terdaftar');
     }
     
     // Hash password
     const hashedPassword = await bcrypt.hash(userData.password, 10);
     
-    // Create user
+    // Buat user
     const user = await User.create({
       name: userData.name,
       email: userData.email,
@@ -2445,7 +2447,7 @@ async function registerUser(userData) {
       createdAt: new Date()
     });
     
-    // Return without password
+    // Kembalikan tanpa password
     return {
       id: user._id,
       name: user.name,
@@ -2457,16 +2459,9 @@ async function registerUser(userData) {
     throw error;
   }
 }
-
-// Usage
-const newUser = await registerUser({
-  name: 'John Doe',
-  email: 'john@example.com',
-  password: 'SecurePass123'
-});
 ```
 
-**2. Create with Nested Documents:**
+**2. Create dengan Nested Documents:**
 
 ```javascript
 const orderSchema = new mongoose.Schema({
@@ -2496,7 +2491,7 @@ const orderSchema = new mongoose.Schema({
 const Order = mongoose.model('Order', orderSchema);
 
 async function createOrder(orderData) {
-  // Calculate total
+  // Hitung total
   const totalAmount = orderData.items.reduce((sum, item) => {
     return sum + (item.quantity * item.price);
   }, 0);
@@ -2511,22 +2506,9 @@ async function createOrder(orderData) {
   
   return order;
 }
-
-// Usage
-const order = await createOrder({
-  customer: {
-    name: 'Alice',
-    email: 'alice@example.com',
-    phone: '+62812345678'
-  },
-  items: [
-    { product: 'Laptop', quantity: 1, price: 1000 },
-    { product: 'Mouse', quantity: 2, price: 20 }
-  ]
-});
 ```
 
-**3. Bulk Create with Transaction:**
+**3. Bulk Create dengan Transaction:**
 
 ```javascript
 async function createUsersWithTransaction(usersData) {
@@ -2534,10 +2516,10 @@ async function createUsersWithTransaction(usersData) {
   session.startTransaction();
   
   try {
-    // Create users
+    // Buat users
     const users = await User.create(usersData, { session });
     
-    // Create audit log
+    // Buat audit log
     await AuditLog.create({
       action: 'BULK_USER_CREATE',
       count: users.length,
@@ -2551,7 +2533,7 @@ async function createUsersWithTransaction(usersData) {
     return users;
     
   } catch (error) {
-    // Rollback on error
+    // Rollback jika terjadi error
     await session.abortTransaction();
     console.error('Transaction aborted:', error);
     throw error;
@@ -2564,7 +2546,7 @@ async function createUsersWithTransaction(usersData) {
 
 ---
 
-## 4.2 Read Operation
+## 4.2 Operasi Read
 
 ### findOne() - Native Driver
 
@@ -2577,11 +2559,11 @@ async function findOneExample() {
     const db = client.db('mydb');
     const collection = db.collection('users');
     
-    // Find by field
+    // Cari berdasarkan field
     const user = await collection.findOne({ email: 'alice@example.com' });
     console.log('Found user:', user);
     
-    // Find by ID
+    // Cari berdasarkan ID
     const { ObjectId } = require('mongodb');
     const userById = await collection.findOne({ 
       _id: new ObjectId('664a1b2c3d4e5f6g7h8i9j0k') 
@@ -2604,30 +2586,29 @@ async function findExample() {
     const db = client.db('mydb');
     const collection = db.collection('users');
     
-    // Find all
+    // Cari semua
     const allUsers = await collection.find().toArray();
-    console.log('All users:', allUsers.length);
     
-    // Find with filter
+    // Cari dengan filter
     const adults = await collection.find({ age: { $gte: 18 } }).toArray();
     
-    // Find with projection (select fields)
+    // Cari dengan projection (pilih field)
     const names = await collection.find(
       {},
       { projection: { name: 1, email: 1, _id: 0 } }
     ).toArray();
     
-    // Find with sort
+    // Cari dengan sort
     const sorted = await collection.find()
-      .sort({ age: -1 })  // Descending
+      .sort({ age: -1 })
       .toArray();
     
-    // Find with limit
+    // Cari dengan limit
     const limited = await collection.find()
       .limit(10)
       .toArray();
     
-    // Find with skip (pagination)
+    // Cari dengan skip (pagination)
     const page2 = await collection.find()
       .skip(10)
       .limit(10)
@@ -2642,57 +2623,57 @@ async function findExample() {
 ### findOne() - Mongoose
 
 ```javascript
-// Find by field
+// Cari berdasarkan field
 const user = await User.findOne({ email: 'alice@example.com' });
 
-// Find by ID
+// Cari berdasarkan ID
 const userById = await User.findById('664a1b2c3d4e5f6g7h8i9j0k');
 
-// Find with select
+// Cari dengan select
 const userWithoutPassword = await User.findOne({ email: 'alice@example.com' })
   .select('-password');
 
-// Find with multiple conditions
+// Cari dengan beberapa kondisi
 const user = await User.findOne({
   email: 'alice@example.com',
   isActive: true
 });
 
-// Find or null
+// Cari atau null
 const user = await User.findOne({ email: 'notfound@example.com' });
 if (!user) {
-  console.log('User not found');
+  console.log('User tidak ditemukan');
 }
 ```
 
 ### find() - Mongoose
 
 ```javascript
-// Find all
+// Cari semua
 const allUsers = await User.find();
 
-// Find with filter
+// Cari dengan filter
 const activeUsers = await User.find({ isActive: true });
 
-// Find with multiple conditions
+// Cari dengan beberapa kondisi
 const users = await User.find({
   age: { $gte: 18, $lte: 65 },
   role: 'user'
 });
 
-// Find with select (projection)
+// Cari dengan select (projection)
 const users = await User.find()
-  .select('name email -_id');  // Include name, email; exclude _id
+  .select('name email -_id');
 
-// Find with sort
+// Cari dengan sort
 const users = await User.find()
-  .sort({ createdAt: -1 });  // Newest first
+  .sort({ createdAt: -1 });
 
-// Find with limit
+// Cari dengan limit
 const users = await User.find()
   .limit(10);
 
-// Find with pagination
+// Cari dengan pagination
 const page = 2;
 const limit = 10;
 const users = await User.find()
@@ -2712,30 +2693,28 @@ const users = await User.find({ isActive: true })
 **Comparison Operators:**
 
 ```javascript
-// $eq - Equal
+// $eq - Sama dengan
 await User.find({ age: { $eq: 25 } });
-// atau
-await User.find({ age: 25 });
 
-// $ne - Not equal
+// $ne - Tidak sama dengan
 await User.find({ role: { $ne: 'admin' } });
 
-// $gt - Greater than
+// $gt - Lebih besar dari
 await User.find({ age: { $gt: 18 } });
 
-// $gte - Greater than or equal
+// $gte - Lebih besar atau sama dengan
 await User.find({ age: { $gte: 18 } });
 
-// $lt - Less than
+// $lt - Kurang dari
 await User.find({ age: { $lt: 65 } });
 
-// $lte - Less than or equal
+// $lte - Kurang dari atau sama dengan
 await User.find({ age: { $lte: 65 } });
 
-// $in - In array
+// $in - Dalam array
 await User.find({ role: { $in: ['user', 'moderator'] } });
 
-// $nin - Not in array
+// $nin - Tidak dalam array
 await User.find({ status: { $nin: ['banned', 'suspended'] } });
 ```
 
@@ -2763,7 +2742,7 @@ await User.find({
   age: { $not: { $lt: 18 } }
 });
 
-// $nor - Not any
+// $nor - Tidak satupun
 await User.find({
   $nor: [
     { status: 'banned' },
@@ -2775,27 +2754,27 @@ await User.find({
 **Element Operators:**
 
 ```javascript
-// $exists - Field exists
+// $exists - Field ada
 await User.find({ phone: { $exists: true } });
 
-// $type - Field type
+// $type - Tipe field
 await User.find({ age: { $type: 'number' } });
 ```
 
 **Array Operators:**
 
 ```javascript
-// $all - Contains all elements
+// $all - Mengandung semua elemen
 await User.find({ tags: { $all: ['javascript', 'nodejs'] } });
 
-// $elemMatch - Array element matches
+// $elemMatch - Elemen array cocok
 await Order.find({
   items: {
     $elemMatch: { quantity: { $gt: 5 }, price: { $lt: 100 } }
   }
 });
 
-// $size - Array size
+// $size - Ukuran array
 await User.find({ tags: { $size: 3 } });
 ```
 
@@ -2805,11 +2784,11 @@ await User.find({ tags: { $size: 3 } });
 // $regex - Regular expression
 await User.find({ name: { $regex: /^John/, $options: 'i' } });
 
-// Case-insensitive search
+// Pencarian case-insensitive
 await User.find({ email: { $regex: 'gmail.com$', $options: 'i' } });
 ```
 
-### Advanced Queries
+### Query Lanjutan
 
 **1. Pagination:**
 
@@ -2835,13 +2814,9 @@ async function getPaginatedUsers(page = 1, limit = 10) {
     }
   };
 }
-
-// Usage
-const result = await getPaginatedUsers(2, 20);
-console.log(`Page ${result.pagination.page} of ${result.pagination.pages}`);
 ```
 
-**2. Search:**
+**2. Pencarian:**
 
 ```javascript
 async function searchUsers(query) {
@@ -2856,12 +2831,9 @@ async function searchUsers(query) {
   
   return users;
 }
-
-// Usage
-const results = await searchUsers('john');
 ```
 
-**3. Filter with Multiple Conditions:**
+**3. Filter dengan Beberapa Kondisi:**
 
 ```javascript
 async function filterUsers(filters) {
@@ -2896,21 +2868,13 @@ async function filterUsers(filters) {
   
   return users;
 }
-
-// Usage
-const users = await filterUsers({
-  role: 'user',
-  minAge: 18,
-  maxAge: 65,
-  isActive: true,
-  search: 'john'
-});
 ```
+
+
 
 ---
 
-
-## 4.3 Update Operation
+## 4.3 Operasi Update
 
 ### updateOne() - Native Driver
 
@@ -2948,7 +2912,6 @@ async function updateManyExample() {
     const db = client.db('mydb');
     const collection = db.collection('users');
     
-    // Update all inactive users
     const result = await collection.updateMany(
       { isActive: false },
       { $set: { status: 'inactive', updatedAt: new Date() } }
@@ -2964,7 +2927,7 @@ async function updateManyExample() {
 
 ### Update Operators
 
-**$set - Set field value:**
+**$set - Menetapkan nilai field:**
 
 ```javascript
 await User.updateOne(
@@ -2973,52 +2936,52 @@ await User.updateOne(
 );
 ```
 
-**$unset - Remove field:**
+**$unset - Menghapus field:**
 
 ```javascript
 await User.updateOne(
   { _id: userId },
-  { $unset: { phone: '' } }  // Remove phone field
+  { $unset: { phone: '' } }
 );
 ```
 
-**$inc - Increment number:**
+**$inc - Menambah/mengurangi angka:**
 
 ```javascript
 await Product.updateOne(
   { _id: productId },
-  { $inc: { stock: -1, sold: 1 } }  // Decrease stock, increase sold
+  { $inc: { stock: -1, sold: 1 } }
 );
 ```
 
-**$mul - Multiply:**
+**$mul - Mengalikan:**
 
 ```javascript
 await Product.updateOne(
   { _id: productId },
-  { $mul: { price: 1.1 } }  // Increase price by 10%
+  { $mul: { price: 1.1 } }  // Naikkan harga 10%
 );
 ```
 
-**$min - Update if new value is less:**
+**$min - Update jika nilai baru lebih kecil:**
 
 ```javascript
 await Product.updateOne(
   { _id: productId },
-  { $min: { lowestPrice: 100 } }  // Set to 100 if current > 100
+  { $min: { lowestPrice: 100 } }
 );
 ```
 
-**$max - Update if new value is greater:**
+**$max - Update jika nilai baru lebih besar:**
 
 ```javascript
 await Product.updateOne(
   { _id: productId },
-  { $max: { highestPrice: 1000 } }  // Set to 1000 if current < 1000
+  { $max: { highestPrice: 1000 } }
 );
 ```
 
-**$rename - Rename field:**
+**$rename - Mengubah nama field:**
 
 ```javascript
 await User.updateMany(
@@ -3027,7 +2990,7 @@ await User.updateMany(
 );
 ```
 
-**$currentDate - Set to current date:**
+**$currentDate - Menetapkan tanggal saat ini:**
 
 ```javascript
 await User.updateOne(
@@ -3038,7 +3001,7 @@ await User.updateOne(
 
 ### Array Update Operators
 
-**$push - Add to array:**
+**$push - Menambahkan ke array:**
 
 ```javascript
 await User.updateOne(
@@ -3046,28 +3009,28 @@ await User.updateOne(
   { $push: { tags: 'javascript' } }
 );
 
-// Push multiple
+// Push beberapa elemen
 await User.updateOne(
   { _id: userId },
   { $push: { tags: { $each: ['nodejs', 'mongodb'] } } }
 );
 
-// Push with sort and limit
+// Push dengan sort dan limit
 await User.updateOne(
   { _id: userId },
   { 
     $push: { 
       scores: { 
         $each: [85, 90],
-        $sort: -1,  // Sort descending
-        $slice: 5   // Keep only top 5
+        $sort: -1,
+        $slice: 5
       } 
     } 
   }
 );
 ```
 
-**$pull - Remove from array:**
+**$pull - Menghapus dari array:**
 
 ```javascript
 await User.updateOne(
@@ -3075,66 +3038,66 @@ await User.updateOne(
   { $pull: { tags: 'javascript' } }
 );
 
-// Pull with condition
+// Pull dengan kondisi
 await Order.updateOne(
   { _id: orderId },
   { $pull: { items: { quantity: 0 } } }
 );
 ```
 
-**$pop - Remove first or last element:**
+**$pop - Menghapus elemen pertama atau terakhir:**
 
 ```javascript
 await User.updateOne(
   { _id: userId },
-  { $pop: { tags: 1 } }  // Remove last element (-1 for first)
+  { $pop: { tags: 1 } }  // Hapus elemen terakhir (-1 untuk pertama)
 );
 ```
 
-**$addToSet - Add if not exists:**
+**$addToSet - Menambahkan jika belum ada:**
 
 ```javascript
 await User.updateOne(
   { _id: userId },
-  { $addToSet: { tags: 'javascript' } }  // Only add if not already in array
+  { $addToSet: { tags: 'javascript' } }
 );
 
-// Add multiple unique
+// Menambahkan beberapa elemen unik
 await User.updateOne(
   { _id: userId },
   { $addToSet: { tags: { $each: ['nodejs', 'mongodb'] } } }
 );
 ```
 
-**$ (positional) - Update array element:**
+**$ (positional) - Update elemen array tertentu:**
 
 ```javascript
 await Order.updateOne(
   { _id: orderId, 'items.product': 'Laptop' },
-  { $set: { 'items.$.quantity': 2 } }  // Update matched item
+  { $set: { 'items.$.quantity': 2 } }
 );
 ```
 
-**$[] (all positional) - Update all array elements:**
+**$[] (all positional) - Update semua elemen array:**
 
 ```javascript
 await Order.updateOne(
   { _id: orderId },
-  { $set: { 'items.$[].discount': 10 } }  // Update all items
+  { $set: { 'items.$[].discount': 10 } }
 );
 ```
 
-**$[element] (filtered positional) - Update matching elements:**
+**$[element] (filtered positional) - Update elemen yang cocok:**
 
 ```javascript
 await Order.updateOne(
   { _id: orderId },
   { $set: { 'items.$[elem].discount': 20 } },
-  { arrayFilters: [{ 'elem.price': { $gte: 100 } }] }  // Only items with price >= 100
+  { arrayFilters: [{ 'elem.price': { $gte: 100 } }] }
 );
 ```
 
-### Mongoose Update Methods
+### Metode Update Mongoose
 
 **updateOne():**
 
@@ -3143,7 +3106,6 @@ const result = await User.updateOne(
   { email: 'alice@example.com' },
   { $set: { age: 26 } }
 );
-
 console.log('Modified:', result.modifiedCount);
 ```
 
@@ -3154,7 +3116,6 @@ const result = await User.updateMany(
   { isActive: false },
   { $set: { status: 'inactive' } }
 );
-
 console.log('Modified:', result.modifiedCount);
 ```
 
@@ -3164,9 +3125,8 @@ console.log('Modified:', result.modifiedCount);
 const user = await User.findByIdAndUpdate(
   userId,
   { $set: { name: 'New Name' } },
-  { new: true }  // Return updated document
+  { new: true }  // Kembalikan dokumen yang sudah di-update
 );
-
 console.log('Updated user:', user);
 ```
 
@@ -3177,24 +3137,24 @@ const user = await User.findOneAndUpdate(
   { email: 'alice@example.com' },
   { $set: { age: 26 } },
   { 
-    new: true,           // Return updated document
-    runValidators: true  // Run schema validators
+    new: true,           // Kembalikan dokumen yang sudah di-update
+    runValidators: true  // Jalankan schema validators
   }
 );
 ```
 
-**save() method:**
+**Metode save():**
 
 ```javascript
 const user = await User.findById(userId);
 user.name = 'New Name';
 user.age = 26;
-await user.save();  // Triggers middleware
+await user.save();  // Memicu middleware
 ```
 
-### Practical Examples
+### Contoh Praktis
 
-**1. Update User Profile:**
+**1. Update Profil User:**
 
 ```javascript
 async function updateUserProfile(userId, updates) {
@@ -3202,7 +3162,7 @@ async function updateUserProfile(userId, updates) {
     const allowedUpdates = ['name', 'email', 'phone', 'address'];
     const updateData = {};
     
-    // Filter allowed fields
+    // Filter field yang diizinkan
     Object.keys(updates).forEach(key => {
       if (allowedUpdates.includes(key)) {
         updateData[key] = updates[key];
@@ -3220,7 +3180,7 @@ async function updateUserProfile(userId, updates) {
     );
     
     if (!user) {
-      throw new Error('User not found');
+      throw new Error('User tidak ditemukan');
     }
     
     return user;
@@ -3229,15 +3189,9 @@ async function updateUserProfile(userId, updates) {
     throw error;
   }
 }
-
-// Usage
-const updated = await updateUserProfile(userId, {
-  name: 'John Doe',
-  phone: '+62812345678'
-});
 ```
 
-**2. Increment Product Views:**
+**2. Increment Views Produk:**
 
 ```javascript
 async function incrementProductViews(productId) {
@@ -3254,7 +3208,7 @@ async function incrementProductViews(productId) {
 }
 ```
 
-**3. Add Comment to Post:**
+**3. Menambahkan Komentar ke Post:**
 
 ```javascript
 async function addComment(postId, commentData) {
@@ -3277,14 +3231,14 @@ async function addComment(postId, commentData) {
 }
 ```
 
-**4. Update Order Status:**
+**4. Update Status Order:**
 
 ```javascript
 async function updateOrderStatus(orderId, newStatus) {
   const validStatuses = ['pending', 'processing', 'shipped', 'delivered', 'cancelled'];
   
   if (!validStatuses.includes(newStatus)) {
-    throw new Error('Invalid status');
+    throw new Error('Status tidak valid');
   }
   
   const order = await Order.findByIdAndUpdate(
@@ -3307,7 +3261,7 @@ async function updateOrderStatus(orderId, newStatus) {
 
 ---
 
-## 4.4 Delete Operation
+## 4.4 Operasi Delete
 
 ### deleteOne() - Native Driver
 
@@ -3321,7 +3275,6 @@ async function deleteOneExample() {
     const collection = db.collection('users');
     
     const result = await collection.deleteOne({ email: 'alice@example.com' });
-    
     console.log('Deleted:', result.deletedCount);
     
   } finally {
@@ -3341,9 +3294,7 @@ async function deleteManyExample() {
     const db = client.db('mydb');
     const collection = db.collection('users');
     
-    // Delete all inactive users
     const result = await collection.deleteMany({ isActive: false });
-    
     console.log('Deleted:', result.deletedCount);
     
   } finally {
@@ -3352,7 +3303,7 @@ async function deleteManyExample() {
 }
 ```
 
-### Mongoose Delete Methods
+### Metode Delete Mongoose
 
 **deleteOne():**
 
@@ -3375,7 +3326,7 @@ const user = await User.findByIdAndDelete(userId);
 if (user) {
   console.log('Deleted user:', user.name);
 } else {
-  console.log('User not found');
+  console.log('User tidak ditemukan');
 }
 ```
 
@@ -3386,20 +3337,9 @@ const user = await User.findOneAndDelete({ email: 'alice@example.com' });
 console.log('Deleted:', user);
 ```
 
-**remove() - Deprecated:**
-
-```javascript
-// DON'T USE - Deprecated
-// const user = await User.findById(userId);
-// await user.remove();
-
-// USE THIS INSTEAD:
-const user = await User.findByIdAndDelete(userId);
-```
-
 ### Soft Delete
 
-Soft delete tidak menghapus data, hanya menandai sebagai deleted.
+Soft delete tidak menghapus data secara permanen, hanya menandai sebagai deleted.
 
 **Schema dengan Soft Delete:**
 
@@ -3414,7 +3354,7 @@ const userSchema = new mongoose.Schema({
   deletedAt: Date
 });
 
-// Middleware untuk filter deleted documents
+// Middleware untuk memfilter dokumen yang sudah dihapus
 userSchema.pre(/^find/, function(next) {
   this.where({ isDeleted: { $ne: true } });
   next();
@@ -3423,7 +3363,7 @@ userSchema.pre(/^find/, function(next) {
 const User = mongoose.model('User', userSchema);
 ```
 
-**Soft Delete Implementation:**
+**Implementasi Soft Delete:**
 
 ```javascript
 async function softDeleteUser(userId) {
@@ -3441,7 +3381,7 @@ async function softDeleteUser(userId) {
   return user;
 }
 
-// Restore deleted user
+// Memulihkan user yang dihapus
 async function restoreUser(userId) {
   const user = await User.findOneAndUpdate(
     { _id: userId, isDeleted: true },
@@ -3457,7 +3397,7 @@ async function restoreUser(userId) {
   return user;
 }
 
-// Find including deleted
+// Mencari termasuk yang sudah dihapus
 async function findAllIncludingDeleted() {
   return await User.find().where('isDeleted').in([true, false]);
 }
@@ -3465,7 +3405,7 @@ async function findAllIncludingDeleted() {
 
 ### Cascade Delete
 
-Delete related documents when parent is deleted.
+Menghapus dokumen terkait ketika parent dihapus.
 
 ```javascript
 const userSchema = new mongoose.Schema({
@@ -3473,7 +3413,7 @@ const userSchema = new mongoose.Schema({
   email: String
 });
 
-// Cascade delete posts when user is deleted
+// Cascade delete posts ketika user dihapus
 userSchema.pre('findOneAndDelete', async function(next) {
   const user = await this.model.findOne(this.getFilter());
   if (user) {
@@ -3486,33 +3426,33 @@ userSchema.pre('findOneAndDelete', async function(next) {
 const User = mongoose.model('User', userSchema);
 ```
 
-### Practical Examples
+### Contoh Praktis
 
-**1. Delete User with Validation:**
+**1. Delete User dengan Validasi:**
 
 ```javascript
 async function deleteUser(userId, requesterId) {
   try {
-    // Check if user exists
+    // Periksa apakah user ada
     const user = await User.findById(userId);
     if (!user) {
-      throw new Error('User not found');
+      throw new Error('User tidak ditemukan');
     }
     
-    // Check permissions
+    // Periksa izin
     const requester = await User.findById(requesterId);
     if (requester.role !== 'admin' && userId !== requesterId) {
-      throw new Error('Unauthorized');
+      throw new Error('Tidak memiliki izin');
     }
     
-    // Delete user
+    // Hapus user
     await User.findByIdAndDelete(userId);
     
-    // Delete related data
+    // Hapus data terkait
     await Post.deleteMany({ author: userId });
     await Comment.deleteMany({ user: userId });
     
-    return { message: 'User deleted successfully' };
+    return { message: 'User berhasil dihapus' };
     
   } catch (error) {
     throw error;
@@ -3520,7 +3460,7 @@ async function deleteUser(userId, requesterId) {
 }
 ```
 
-**2. Bulk Delete with Conditions:**
+**2. Bulk Delete dengan Kondisi:**
 
 ```javascript
 async function deleteInactiveUsers(days = 90) {
@@ -3537,7 +3477,7 @@ async function deleteInactiveUsers(days = 90) {
 }
 ```
 
-**3. Delete with Transaction:**
+**3. Delete dengan Transaction:**
 
 ```javascript
 async function deleteOrderWithTransaction(orderId) {
@@ -3545,13 +3485,13 @@ async function deleteOrderWithTransaction(orderId) {
   session.startTransaction();
   
   try {
-    // Find order
+    // Cari order
     const order = await Order.findById(orderId).session(session);
     if (!order) {
-      throw new Error('Order not found');
+      throw new Error('Order tidak ditemukan');
     }
     
-    // Restore product stock
+    // Kembalikan stok produk
     for (const item of order.items) {
       await Product.findByIdAndUpdate(
         item.productId,
@@ -3560,12 +3500,12 @@ async function deleteOrderWithTransaction(orderId) {
       );
     }
     
-    // Delete order
+    // Hapus order
     await Order.findByIdAndDelete(orderId).session(session);
     
     // Commit transaction
     await session.commitTransaction();
-    console.log('Order deleted and stock restored');
+    console.log('Order dihapus dan stok dikembalikan');
     
   } catch (error) {
     await session.abortTransaction();
@@ -3578,46 +3518,46 @@ async function deleteOrderWithTransaction(orderId) {
 
 ---
 
-## 4.5 Query Operators & Filtering
+## 4.5 Query Operators dan Filtering
 
-### Comparison Operators Summary
+### Ringkasan Comparison Operators
 
-| Operator | Description | Example |
-|----------|-------------|---------|
-| `$eq` | Equal | `{ age: { $eq: 25 } }` |
-| `$ne` | Not equal | `{ age: { $ne: 25 } }` |
-| `$gt` | Greater than | `{ age: { $gt: 18 } }` |
-| `$gte` | Greater than or equal | `{ age: { $gte: 18 } }` |
-| `$lt` | Less than | `{ age: { $lt: 65 } }` |
-| `$lte` | Less than or equal | `{ age: { $lte: 65 } }` |
-| `$in` | In array | `{ role: { $in: ['user', 'admin'] } }` |
-| `$nin` | Not in array | `{ status: { $nin: ['banned'] } }` |
+| Operator | Deskripsi | Contoh |
+|----------|-----------|--------|
+| `$eq` | Sama dengan | `{ age: { $eq: 25 } }` |
+| `$ne` | Tidak sama dengan | `{ age: { $ne: 25 } }` |
+| `$gt` | Lebih besar dari | `{ age: { $gt: 18 } }` |
+| `$gte` | Lebih besar atau sama | `{ age: { $gte: 18 } }` |
+| `$lt` | Kurang dari | `{ age: { $lt: 65 } }` |
+| `$lte` | Kurang dari atau sama | `{ age: { $lte: 65 } }` |
+| `$in` | Dalam array | `{ role: { $in: ['user', 'admin'] } }` |
+| `$nin` | Tidak dalam array | `{ status: { $nin: ['banned'] } }` |
 
-### Logical Operators Summary
+### Ringkasan Logical Operators
 
-| Operator | Description | Example |
-|----------|-------------|---------|
-| `$and` | All conditions true | `{ $and: [{ age: { $gte: 18 } }, { age: { $lte: 65 } }] }` |
-| `$or` | Any condition true | `{ $or: [{ role: 'admin' }, { role: 'moderator' }] }` |
-| `$not` | Inverts condition | `{ age: { $not: { $lt: 18 } } }` |
-| `$nor` | None of conditions true | `{ $nor: [{ status: 'banned' }, { status: 'suspended' }] }` |
+| Operator | Deskripsi | Contoh |
+|----------|-----------|--------|
+| `$and` | Semua kondisi benar | `{ $and: [{ age: { $gte: 18 } }, { age: { $lte: 65 } }] }` |
+| `$or` | Salah satu kondisi benar | `{ $or: [{ role: 'admin' }, { role: 'moderator' }] }` |
+| `$not` | Membalik kondisi | `{ age: { $not: { $lt: 18 } } }` |
+| `$nor` | Tidak satupun benar | `{ $nor: [{ status: 'banned' }, { status: 'suspended' }] }` |
 
-### Element Operators Summary
+### Ringkasan Element Operators
 
-| Operator | Description | Example |
-|----------|-------------|---------|
-| `$exists` | Field exists | `{ phone: { $exists: true } }` |
-| `$type` | Field type | `{ age: { $type: 'number' } }` |
+| Operator | Deskripsi | Contoh |
+|----------|-----------|--------|
+| `$exists` | Field ada | `{ phone: { $exists: true } }` |
+| `$type` | Tipe field | `{ age: { $type: 'number' } }` |
 
-### Array Operators Summary
+### Ringkasan Array Operators
 
-| Operator | Description | Example |
-|----------|-------------|---------|
-| `$all` | Contains all | `{ tags: { $all: ['js', 'node'] } }` |
-| `$elemMatch` | Array element matches | `{ items: { $elemMatch: { qty: { $gt: 5 } } } }` |
-| `$size` | Array size | `{ tags: { $size: 3 } }` |
+| Operator | Deskripsi | Contoh |
+|----------|-----------|--------|
+| `$all` | Mengandung semua | `{ tags: { $all: ['js', 'node'] } }` |
+| `$elemMatch` | Elemen array cocok | `{ items: { $elemMatch: { qty: { $gt: 5 } } } }` |
+| `$size` | Ukuran array | `{ tags: { $size: 3 } }` |
 
-### Complex Query Examples
+### Contoh Query Kompleks
 
 **1. Advanced Filtering:**
 
@@ -3625,19 +3565,19 @@ async function deleteOrderWithTransaction(orderId) {
 async function advancedUserSearch(filters) {
   const query = {};
   
-  // Age range
+  // Range usia
   if (filters.minAge || filters.maxAge) {
     query.age = {};
     if (filters.minAge) query.age.$gte = filters.minAge;
     if (filters.maxAge) query.age.$lte = filters.maxAge;
   }
   
-  // Multiple roles
+  // Beberapa role
   if (filters.roles && filters.roles.length > 0) {
     query.role = { $in: filters.roles };
   }
   
-  // Text search
+  // Pencarian teks
   if (filters.search) {
     query.$or = [
       { name: { $regex: filters.search, $options: 'i' } },
@@ -3645,14 +3585,14 @@ async function advancedUserSearch(filters) {
     ];
   }
   
-  // Date range
+  // Range tanggal
   if (filters.startDate || filters.endDate) {
     query.createdAt = {};
     if (filters.startDate) query.createdAt.$gte = new Date(filters.startDate);
     if (filters.endDate) query.createdAt.$lte = new Date(filters.endDate);
   }
   
-  // Active status
+  // Status aktif
   if (filters.isActive !== undefined) {
     query.isActive = filters.isActive;
   }
@@ -3666,13 +3606,13 @@ async function advancedUserSearch(filters) {
 }
 ```
 
-**2. Nested Object Query:**
+**2. Query Nested Object:**
 
 ```javascript
-// Find users in Jakarta
+// Cari users di Jakarta
 await User.find({ 'address.city': 'Jakarta' });
 
-// Find users with complete address
+// Cari users dengan alamat lengkap
 await User.find({
   'address.street': { $exists: true },
   'address.city': { $exists: true },
@@ -3680,19 +3620,19 @@ await User.find({
 });
 ```
 
-**3. Array Query:**
+**3. Query Array:**
 
 ```javascript
-// Find users with 'javascript' tag
+// Cari users dengan tag 'javascript'
 await User.find({ tags: 'javascript' });
 
-// Find users with both tags
+// Cari users dengan kedua tag
 await User.find({ tags: { $all: ['javascript', 'nodejs'] } });
 
-// Find users with at least 3 tags
+// Cari users dengan minimal 3 tag
 await User.find({ tags: { $size: 3 } });
 
-// Find orders with expensive items
+// Cari orders dengan item mahal
 await Order.find({
   items: {
     $elemMatch: {
@@ -3709,11 +3649,11 @@ await Order.find({
 
 
 
-# V. ADVANCED TOPICS
+# V. TOPIK LANJUTAN
 
 ## 5.1 Aggregation Pipeline
 
-Aggregation Pipeline adalah framework untuk memproses data dalam beberapa tahap (stages).
+Aggregation Pipeline adalah framework untuk memproses data dalam beberapa tahap (stages) secara berurutan.
 
 ### Konsep Dasar
 
@@ -3732,7 +3672,7 @@ db.orders.aggregate([
 ])
 ```
 
-**$group - Kelompokkan dan hitung:**
+**$group - Mengelompokkan dan menghitung:**
 
 ```javascript
 db.orders.aggregate([
@@ -3747,7 +3687,7 @@ db.orders.aggregate([
 ])
 ```
 
-**$project - Pilih/transformasi field:**
+**$project - Memilih/mentransformasi field:**
 
 ```javascript
 db.users.aggregate([
@@ -3789,7 +3729,7 @@ db.orders.aggregate([
 ])
 ```
 
-**$unwind - Pecah array jadi dokumen terpisah:**
+**$unwind - Memecah array menjadi dokumen terpisah:**
 
 ```javascript
 db.orders.aggregate([
@@ -3836,24 +3776,24 @@ const salesReport = await Order.aggregate([
 { $toUpper: "$name" }
 { $concat: ["$firstName", " ", "$lastName"] }
 
-// Arithmetic
+// Aritmatika
 { $add: ["$price", "$tax"] }
 { $multiply: ["$quantity", "$price"] }
 { $round: ["$price", 2] }
 
-// Date
+// Tanggal
 { $year: "$createdAt" }
 { $month: "$createdAt" }
 { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } }
 
-// Conditional
+// Kondisional
 { $cond: { if: { $gte: ["$age", 18] }, then: "adult", else: "minor" } }
 { $ifNull: ["$phone", "N/A"] }
 ```
 
 ---
 
-## 5.2 Indexing Strategies
+## 5.2 Strategi Indexing
 
 ### Jenis-Jenis Index
 
@@ -3894,7 +3834,7 @@ db.places.find({
 })
 ```
 
-### Mongoose Index
+### Index pada Mongoose
 
 ```javascript
 const userSchema = new mongoose.Schema({
@@ -3916,27 +3856,27 @@ const result = await User.find({ email: "alice@example.com" })
 // totalDocsExamined: 1 (dengan index) vs 1000 (tanpa index)
 ```
 
-### Best Practices
+### Praktik Terbaik Indexing
 
-```
-✅ Index field yang sering di-query dan di-sort
-✅ Compound index: equality → sort → range
-✅ Monitor dengan $indexStats
+Yang sebaiknya dilakukan:
+- Index field yang sering di-query dan di-sort
+- Compound index: equality, sort, range (berurutan)
+- Monitor dengan $indexStats
 
-❌ Jangan terlalu banyak index (memperlambat write)
-❌ Jangan index field low cardinality (boolean)
-```
+Yang sebaiknya dihindari:
+- Terlalu banyak index (memperlambat operasi write)
+- Index pada field low cardinality (seperti boolean)
 
 ---
 
-## 5.3 Relationships & Population
+## 5.3 Relationships dan Population
 
 ### Embedding vs Referencing
 
 **Embedding (data dalam satu dokumen):**
 
 ```javascript
-// Cocok: data selalu diakses bersama, 1-to-few
+// Cocok untuk: data selalu diakses bersama, relasi 1-to-few
 const userSchema = new mongoose.Schema({
   name: String,
   address: { street: String, city: String, zipcode: String },
@@ -3947,7 +3887,7 @@ const userSchema = new mongoose.Schema({
 **Referencing (data terpisah dengan ID):**
 
 ```javascript
-// Cocok: data besar, many-to-many, sering berubah
+// Cocok untuk: data besar, many-to-many, sering berubah
 const postSchema = new mongoose.Schema({
   title: String,
   content: String,
@@ -3998,7 +3938,7 @@ const postsWithAuthors = await Post.aggregate([
 
 ---
 
-## 5.4 Error Handling
+## 5.4 Penanganan Error
 
 ### Jenis Error MongoDB/Mongoose
 
@@ -4009,7 +3949,7 @@ const postsWithAuthors = await Post.aggregate([
 | `MongoServerError 11000` | Duplicate key |
 | `MongoNetworkError` | Koneksi gagal |
 
-### Error Handling Pattern
+### Pola Penanganan Error
 
 ```javascript
 async function createUser(data) {
@@ -4081,30 +4021,30 @@ app.use(errorHandler);
 
 
 
-# VI. BEST PRACTICES
+# VI. PRAKTIK TERBAIK
 
-## 6.1 Performance Optimization
+## 6.1 Optimasi Performa
 
-### Query Optimization
+### Optimasi Query
 
 ```javascript
-// ❌ Buruk: Ambil semua field
+// Tidak direkomendasikan: Mengambil semua field
 const users = await User.find();
 
-// ✅ Baik: Hanya ambil field yang dibutuhkan
+// Direkomendasikan: Hanya ambil field yang dibutuhkan
 const users = await User.find().select('name email');
 
-// ❌ Buruk: Ambil semua data lalu filter di aplikasi
+// Tidak direkomendasikan: Ambil semua data lalu filter di aplikasi
 const allUsers = await User.find();
 const adults = allUsers.filter(u => u.age >= 18);
 
-// ✅ Baik: Filter di database
+// Direkomendasikan: Filter di database
 const adults = await User.find({ age: { $gte: 18 } });
 
-// ✅ Gunakan lean() untuk read-only (skip Mongoose overhead)
+// Gunakan lean() untuk read-only (melewati overhead Mongoose)
 const users = await User.find().lean();
 
-// ✅ Pagination
+// Pagination
 const users = await User.find()
   .sort({ createdAt: -1 })
   .skip((page - 1) * limit)
@@ -4116,9 +4056,9 @@ const users = await User.find()
 ```javascript
 // config/database.js
 mongoose.connect(process.env.MONGODB_URI, {
-  maxPoolSize: 10,      // Max connections
-  minPoolSize: 5,       // Min connections
-  maxIdleTimeMS: 10000, // Close idle connections
+  maxPoolSize: 10,      // Maksimum koneksi
+  minPoolSize: 5,       // Minimum koneksi
+  maxIdleTimeMS: 10000, // Tutup koneksi idle
   serverSelectionTimeoutMS: 5000
 });
 ```
@@ -4126,12 +4066,12 @@ mongoose.connect(process.env.MONGODB_URI, {
 ### Bulk Operations
 
 ```javascript
-// ❌ Buruk: Loop individual operations
+// Tidak direkomendasikan: Loop operasi individual
 for (const item of items) {
   await Product.updateOne({ _id: item.id }, { $set: { price: item.price } });
 }
 
-// ✅ Baik: Bulk write
+// Direkomendasikan: Bulk write
 const bulkOps = items.map(item => ({
   updateOne: {
     filter: { _id: item.id },
@@ -4141,7 +4081,7 @@ const bulkOps = items.map(item => ({
 await Product.bulkWrite(bulkOps);
 ```
 
-### Caching Strategy
+### Strategi Caching
 
 ```javascript
 // Simple in-memory cache
@@ -4156,7 +4096,7 @@ async function getUserById(id) {
   
   const user = await User.findById(id).lean();
   cache.set(cacheKey, user);
-  setTimeout(() => cache.delete(cacheKey), 60000); // TTL 60s
+  setTimeout(() => cache.delete(cacheKey), 60000); // TTL 60 detik
   
   return user;
 }
@@ -4164,17 +4104,17 @@ async function getUserById(id) {
 
 ---
 
-## 6.2 Security Guidelines
+## 6.2 Panduan Keamanan
 
-### Input Validation & Sanitization
+### Validasi dan Sanitasi Input
 
 ```javascript
-// ❌ Buruk: Langsung pakai input user
+// Tidak direkomendasikan: Langsung menggunakan input user
 app.get('/users', async (req, res) => {
-  const users = await User.find(req.query); // NoSQL Injection!
+  const users = await User.find(req.query); // Rentan NoSQL Injection
 });
 
-// ✅ Baik: Validasi dan sanitize input
+// Direkomendasikan: Validasi dan sanitasi input
 const sanitize = require('mongo-sanitize');
 
 app.get('/users', async (req, res) => {
@@ -4186,25 +4126,25 @@ app.get('/users', async (req, res) => {
 });
 ```
 
-### NoSQL Injection Prevention
+### Pencegahan NoSQL Injection
 
 ```javascript
-// ❌ Rentan injection: { "$gt": "" } bisa bypass
+// Rentan injection: { "$gt": "" } dapat mem-bypass autentikasi
 app.post('/login', async (req, res) => {
   const user = await User.findOne({
     email: req.body.email,
-    password: req.body.password  // Bisa diinject!
+    password: req.body.password  // Dapat diinjeksi
   });
 });
 
-// ✅ Aman: Validasi tipe data
+// Aman: Validasi tipe data
 app.post('/login', async (req, res) => {
   if (typeof req.body.email !== 'string' || typeof req.body.password !== 'string') {
-    return res.status(400).json({ message: 'Invalid input' });
+    return res.status(400).json({ message: 'Input tidak valid' });
   }
   const user = await User.findOne({ email: req.body.email });
   if (!user || !(await bcrypt.compare(req.body.password, user.password))) {
-    return res.status(401).json({ message: 'Invalid credentials' });
+    return res.status(401).json({ message: 'Kredensial tidak valid' });
   }
   res.json({ token: generateToken(user) });
 });
@@ -4213,7 +4153,7 @@ app.post('/login', async (req, res) => {
 ### Environment Variables
 
 ```bash
-# .env - JANGAN commit ke git!
+# .env - JANGAN commit ke git
 MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/mydb
 JWT_SECRET=your-secret-key
 NODE_ENV=production
@@ -4230,13 +4170,13 @@ requiredEnvVars.forEach(varName => {
 });
 ```
 
-### Field-Level Security
+### Keamanan Level Field
 
 ```javascript
-// Jangan pernah return password
+// Jangan pernah mengembalikan password
 const userSchema = new mongoose.Schema({
   email: String,
-  password: { type: String, select: false } // Tidak di-return by default
+  password: { type: String, select: false } // Tidak dikembalikan secara default
 });
 
 // Hanya ambil password saat login
@@ -4245,28 +4185,28 @@ const user = await User.findOne({ email }).select('+password');
 
 ---
 
-## 6.3 Code Organization
+## 6.3 Organisasi Kode
 
-### Project Structure (MVC Pattern)
+### Struktur Project (Pola MVC)
 
 ```
 project/
 ├── config/
 │   └── database.js          # Koneksi database
 ├── models/
-│   ├── User.js              # User schema & model
-│   ├── Post.js              # Post schema & model
+│   ├── User.js              # User schema dan model
+│   ├── Post.js              # Post schema dan model
 │   └── index.js             # Export semua models
 ├── controllers/
 │   ├── userController.js    # Logic handler
 │   └── postController.js
 ├── routes/
-│   ├── userRoutes.js        # Route definitions
+│   ├── userRoutes.js        # Definisi route
 │   └── postRoutes.js
 ├── middleware/
 │   ├── auth.js              # Authentication
-│   ├── errorHandler.js      # Error handling
-│   └── validate.js          # Input validation
+│   ├── errorHandler.js      # Penanganan error
+│   └── validate.js          # Validasi input
 ├── utils/
 │   ├── asyncHandler.js
 │   └── helpers.js
@@ -4276,7 +4216,7 @@ project/
 └── index.js                 # Entry point
 ```
 
-### Controller Pattern
+### Pola Controller
 
 ```javascript
 // controllers/userController.js
@@ -4309,7 +4249,7 @@ exports.createUser = asyncHandler(async (req, res) => {
 });
 ```
 
-### Route Pattern
+### Pola Route
 
 ```javascript
 // routes/userRoutes.js
@@ -4326,16 +4266,16 @@ module.exports = router;
 
 ---
 
-## 6.4 Common Pitfalls
+## 6.4 Kesalahan Umum
 
 ### 1. Lupa await
 
 ```javascript
-// ❌ Buruk: Lupa await - mendapat Promise bukan data
+// Salah: Lupa await - mendapat Promise bukan data
 const user = User.findById(id);
-console.log(user.name); // undefined!
+console.log(user.name); // undefined
 
-// ✅ Baik
+// Benar
 const user = await User.findById(id);
 console.log(user.name);
 ```
@@ -4343,27 +4283,27 @@ console.log(user.name);
 ### 2. N+1 Query Problem
 
 ```javascript
-// ❌ Buruk: Query di dalam loop
+// Tidak efisien: Query di dalam loop
 const posts = await Post.find();
 for (const post of posts) {
-  post.author = await User.findById(post.authorId); // N queries!
+  post.author = await User.findById(post.authorId); // N queries tambahan
 }
 
-// ✅ Baik: Gunakan populate atau $lookup
+// Efisien: Gunakan populate atau $lookup
 const posts = await Post.find().populate('author', 'name email');
 ```
 
-### 3. Tidak Handle null
+### 3. Tidak Menangani null
 
 ```javascript
-// ❌ Buruk: Crash jika user null
+// Salah: Crash jika user null
 const user = await User.findById(id);
-res.json(user.name); // TypeError jika null!
+res.json(user.name); // TypeError jika null
 
-// ✅ Baik
+// Benar
 const user = await User.findById(id);
 if (!user) {
-  return res.status(404).json({ message: 'User not found' });
+  return res.status(404).json({ message: 'User tidak ditemukan' });
 }
 res.json(user.name);
 ```
@@ -4371,33 +4311,33 @@ res.json(user.name);
 ### 4. Memory Leak - Cursor Tidak Ditutup
 
 ```javascript
-// ❌ Buruk untuk data besar
+// Tidak direkomendasikan untuk data besar
 const allDocs = await Collection.find().toArray(); // Load semua ke memory
 
-// ✅ Baik: Gunakan cursor/stream
+// Direkomendasikan: Gunakan cursor/stream
 const cursor = Collection.find().cursor();
 for await (const doc of cursor) {
-  // Process satu per satu
+  // Proses satu per satu
 }
 ```
 
-### 5. Tidak Validasi ObjectId
+### 5. Tidak Memvalidasi ObjectId
 
 ```javascript
-// ❌ Crash jika id bukan valid ObjectId
+// Salah: Crash jika id bukan valid ObjectId
 app.get('/users/:id', async (req, res) => {
-  const user = await User.findById(req.params.id); // CastError!
+  const user = await User.findById(req.params.id); // CastError
 });
 
-// ✅ Validasi dulu
+// Benar: Validasi terlebih dahulu
 const mongoose = require('mongoose');
 
 app.get('/users/:id', async (req, res) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-    return res.status(400).json({ message: 'Invalid ID' });
+    return res.status(400).json({ message: 'ID tidak valid' });
   }
   const user = await User.findById(req.params.id);
-  if (!user) return res.status(404).json({ message: 'Not found' });
+  if (!user) return res.status(404).json({ message: 'Tidak ditemukan' });
   res.json(user);
 });
 ```
@@ -4405,12 +4345,12 @@ app.get('/users/:id', async (req, res) => {
 ### 6. Schema Mismatch
 
 ```javascript
-// ❌ Field tidak ada di schema (strict mode default)
+// Salah: Field tidak ada di schema (strict mode default)
 const userSchema = new mongoose.Schema({ name: String, email: String });
 await User.create({ name: "Alice", email: "a@b.com", phone: "123" });
-// phone TIDAK tersimpan!
+// phone TIDAK tersimpan
 
-// ✅ Pastikan semua field ada di schema
+// Benar: Pastikan semua field ada di schema
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -4424,13 +4364,13 @@ const userSchema = new mongoose.Schema({
 
 
 
-# VII. STUDI KASUS & PROJECT
+# VII. STUDI KASUS DAN PROJECT
 
-## 7.1 Project Structure
+## 7.1 Struktur Project
 
 ### Studi Kasus: REST API Toko Online
 
-Membangun REST API sederhana untuk manajemen produk dan pesanan menggunakan Express.js + MongoDB + Mongoose.
+Membangun REST API sederhana untuk manajemen produk dan pesanan menggunakan Express.js, MongoDB, dan Mongoose.
 
 ### Struktur Folder
 
@@ -4483,7 +4423,7 @@ toko-online-api/
 
 ---
 
-## 7.2 Complete Example
+## 7.2 Implementasi Lengkap
 
 ### config/database.js
 
@@ -4493,9 +4433,9 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log('✅ MongoDB Connected');
+    console.log('MongoDB Connected');
   } catch (error) {
-    console.error('❌ MongoDB Error:', error.message);
+    console.error('MongoDB Error:', error.message);
     process.exit(1);
   }
 };
@@ -4548,7 +4488,7 @@ const orderSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-// Auto-generate order number
+// Auto-generate nomor order
 orderSchema.pre('save', function(next) {
   if (!this.orderNumber) {
     this.orderNumber = `ORD-${Date.now()}-${Math.random().toString(36).substr(2, 5).toUpperCase()}`;
@@ -4670,7 +4610,7 @@ exports.updateStatus = asyncHandler(async (req, res) => {
 });
 ```
 
-### routes/productRoutes.js & orderRoutes.js
+### routes/productRoutes.js dan orderRoutes.js
 
 ```javascript
 // routes/productRoutes.js
@@ -4703,7 +4643,7 @@ require('dotenv').config();
 
 const app = express();
 
-// Connect DB
+// Koneksi Database
 connectDB();
 
 // Middleware
@@ -4725,7 +4665,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 ---
 
-## 7.3 Source Code
+## 7.3 Kode Sumber
 
 ### utils/asyncHandler.js
 
@@ -4759,21 +4699,21 @@ const errorHandler = (err, req, res, next) => {
 module.exports = errorHandler;
 ```
 
-### Testing API dengan cURL
+### Pengujian API dengan cURL
 
 ```bash
-# Create Product
+# Membuat Produk
 curl -X POST http://localhost:3000/api/products \
   -H "Content-Type: application/json" \
   -d '{"name":"Laptop ASUS","price":12000000,"stock":50,"category":"elektronik"}'
 
-# Get All Products
+# Mendapatkan Semua Produk
 curl http://localhost:3000/api/products?page=1&limit=5&category=elektronik
 
-# Search Products
+# Pencarian Produk
 curl http://localhost:3000/api/products?search=laptop
 
-# Create Order
+# Membuat Order
 curl -X POST http://localhost:3000/api/orders \
   -H "Content-Type: application/json" \
   -d '{
@@ -4781,7 +4721,7 @@ curl -X POST http://localhost:3000/api/orders \
     "items": [{"product":"<product_id>","quantity":1}]
   }'
 
-# Update Order Status
+# Update Status Order
 curl -X PATCH http://localhost:3000/api/orders/<order_id>/status \
   -H "Content-Type: application/json" \
   -d '{"status":"shipped"}'
@@ -4793,9 +4733,9 @@ curl -X PATCH http://localhost:3000/api/orders/<order_id>/status \
 
 
 
-# VIII. SOAL & JAWABAN
+# VIII. SOAL DAN JAWABAN
 
-## 8.1 Soal Konsep (Pilihan Ganda & Essay)
+## 8.1 Soal Konsep (Pilihan Ganda dan Essay)
 
 ### Pilihan Ganda
 
@@ -4910,7 +4850,7 @@ Buatlah aggregation pipeline untuk:
 **Soal 4: API Endpoint**
 
 Buatlah Express route `GET /api/books` dengan fitur:
-- Pagination (page & limit)
+- Pagination (page dan limit)
 - Filter berdasarkan genre
 - Search berdasarkan judul
 - Sort berdasarkan tahun terbit
@@ -4932,7 +4872,7 @@ Buatlah Express route `GET /api/books` dengan fitur:
 | 7 | **b** | `pre('save')` dijalankan sebelum save |
 | 8 | **c** | Strict mode: field di luar schema diabaikan |
 | 9 | **b** | TTL index auto-delete dokumen setelah expireAfterSeconds |
-| 10 | **c** | `findByIdAndUpdate` dengan `{ new: true }` return updated doc |
+| 10 | **c** | `findByIdAndUpdate` dengan `{ new: true }` mengembalikan dokumen yang sudah di-update |
 
 ### Jawaban Essay
 
@@ -4953,11 +4893,11 @@ Pipeline memproses data dalam tahap berurutan:
 
 **13. CAP Theorem:**
 
-CAP Theorem menyatakan sistem terdistribusi hanya bisa memenuhi 2 dari 3: Consistency, Availability, Partition Tolerance. MongoDB termasuk kategori **CP** - mengutamakan Consistency dan Partition Tolerance. Saat terjadi network partition, MongoDB mungkin tidak available (primary election) tapi menjamin data konsisten.
+CAP Theorem menyatakan sistem terdistribusi hanya dapat memenuhi 2 dari 3 properti: Consistency, Availability, Partition Tolerance. MongoDB termasuk kategori CP - mengutamakan Consistency dan Partition Tolerance. Saat terjadi network partition, MongoDB mungkin tidak available (primary election) tetapi menjamin data konsisten.
 
 **14. Indexing:**
 
-Index mempercepat query dengan membuat struktur data terurut. Tanpa index, MongoDB harus scan seluruh collection (COLLSCAN). Jenis index:
+Index mempercepat query dengan membuat struktur data terurut. Tanpa index, MongoDB harus melakukan scan seluruh collection (COLLSCAN). Jenis index:
 - **Single Field**: Index pada satu field (`{ email: 1 }`)
 - **Compound**: Index pada beberapa field (`{ city: 1, age: -1 }`)
 - **Text**: Full-text search (`{ content: "text" }`)
@@ -4966,10 +4906,10 @@ Index mempercepat query dengan membuat struktur data terurut. Tanpa index, Mongo
 
 **15. NoSQL Injection:**
 
-NoSQL Injection terjadi saat attacker menyisipkan operator MongoDB melalui input. Contoh: mengirim `{"$gt": ""}` sebagai password untuk bypass authentication. Pencegahan:
+NoSQL Injection terjadi saat attacker menyisipkan operator MongoDB melalui input. Contoh: mengirim `{"$gt": ""}` sebagai password untuk mem-bypass authentication. Pencegahan:
 - Validasi tipe data input (pastikan string, bukan object)
 - Gunakan library `mongo-sanitize`
-- Jangan langsung pass `req.body`/`req.query` ke query
+- Jangan langsung meneruskan `req.body`/`req.query` ke query
 - Gunakan schema validation Mongoose
 
 ### Jawaban Soal Praktik
@@ -5067,9 +5007,9 @@ app.get('/api/books', async (req, res) => {
 
 
 
-# IX. TROUBLESHOOTING & FAQ
+# IX. TROUBLESHOOTING DAN FAQ
 
-## 9.1 Common Errors
+## 9.1 Error Umum
 
 ### 1. MongoNetworkError: connect ECONNREFUSED
 
@@ -5091,7 +5031,7 @@ sudo systemctl start mongod
 # macOS
 brew services start mongodb-community
 
-# Cek status
+# Verifikasi
 mongosh --eval "db.runCommand({ ping: 1 })"
 ```
 
@@ -5103,16 +5043,16 @@ mongosh --eval "db.runCommand({ ping: 1 })"
 MongoServerError: E11000 duplicate key error collection: mydb.users index: email_1 dup key: { email: "test@email.com" }
 ```
 
-**Penyebab:** Mencoba insert data dengan value yang sudah ada pada field unique.
+**Penyebab:** Mencoba menyisipkan data dengan value yang sudah ada pada field unique.
 
 **Solusi:**
 
 ```javascript
-// Cek dulu sebelum insert
+// Periksa terlebih dahulu sebelum insert
 const exists = await User.findOne({ email: data.email });
 if (exists) throw new Error('Email sudah terdaftar');
 
-// Atau handle error
+// Atau tangani error
 try {
   await User.create(data);
 } catch (err) {
@@ -5135,7 +5075,7 @@ MongooseError: Operation `users.find()` buffering timed out after 10000ms
 **Solusi:**
 
 ```javascript
-// Pastikan connect selesai sebelum listen
+// Pastikan koneksi selesai sebelum listen
 const connectDB = async () => {
   await mongoose.connect(process.env.MONGODB_URI);
   console.log('DB Connected');
@@ -5179,7 +5119,7 @@ if (!req.body.email) {
 CastError: Cast to ObjectId failed for value "abc123" at path "_id"
 ```
 
-**Penyebab:** String yang diberikan bukan format ObjectId valid (24 hex characters).
+**Penyebab:** String yang diberikan bukan format ObjectId valid (24 karakter hexadecimal).
 
 **Solusi:**
 
@@ -5207,10 +5147,10 @@ MongooseServerSelectionError: Could not connect to any servers in your MongoDB A
 **Solusi:**
 
 ```
-1. Buka MongoDB Atlas → Network Access
-2. Tambahkan IP address Anda (atau 0.0.0.0/0 untuk development)
+1. Buka MongoDB Atlas - Network Access
+2. Tambahkan IP address (atau 0.0.0.0/0 untuk development)
 3. Pastikan username/password benar
-4. Pastikan connection string format benar:
+4. Pastikan format connection string benar:
    mongodb+srv://user:password@cluster.mongodb.net/dbname
 5. Encode special characters di password (gunakan encodeURIComponent)
 ```
@@ -5228,18 +5168,18 @@ OverwriteModelError: Cannot overwrite `User` model once compiled
 **Solusi:**
 
 ```javascript
-// ❌ Buruk
+// Salah
 const User = mongoose.model('User', userSchema); // Dipanggil berkali-kali
 
-// ✅ Baik
+// Benar
 const User = mongoose.models.User || mongoose.model('User', userSchema);
 ```
 
 ---
 
-## 9.2 Solutions & Tips
+## 9.2 Solusi dan Tips
 
-### Connection Best Practices
+### Praktik Terbaik Koneksi
 
 ```javascript
 // Retry connection
@@ -5254,46 +5194,45 @@ const connectWithRetry = async (retries = 5) => {
       await new Promise(res => setTimeout(res, 5000));
     }
   }
-  console.error('Failed to connect after retries');
+  console.error('Gagal terhubung setelah beberapa percobaan');
   process.exit(1);
 };
 ```
 
-### Debug Mode
+### Mode Debug
 
 ```javascript
-// Aktifkan debug untuk lihat semua query
+// Aktifkan debug untuk melihat semua query
 mongoose.set('debug', true);
 
-// Custom debug
+// Debug kustom
 mongoose.set('debug', (collectionName, method, query, doc) => {
   console.log(`${collectionName}.${method}`, JSON.stringify(query));
 });
 ```
 
-### Memory Management
+### Manajemen Memory
 
 ```javascript
 // Untuk data besar, gunakan cursor
 const cursor = User.find().cursor();
 for await (const user of cursor) {
-  // Process satu per satu, hemat memory
+  // Proses satu per satu, hemat memory
 }
 
 // Atau stream
 User.find().stream()
-  .on('data', (doc) => { /* process */ })
-  .on('error', (err) => { /* handle */ })
-  .on('end', () => { /* done */ });
+  .on('data', (doc) => { /* proses */ })
+  .on('error', (err) => { /* tangani */ })
+  .on('end', () => { /* selesai */ });
 ```
 
-### Slow Query Detection
+### Deteksi Query Lambat
 
 ```javascript
 // Monitor slow queries
 mongoose.set('debug', (coll, method, query, doc, options) => {
   const start = Date.now();
-  // Log jika query > 100ms
   setTimeout(() => {
     const duration = Date.now() - start;
     if (duration > 100) {
@@ -5305,35 +5244,35 @@ mongoose.set('debug', (coll, method, query, doc, options) => {
 
 ---
 
-## 9.3 FAQ
+## 9.3 Pertanyaan yang Sering Diajukan
 
 ### Q1: MongoDB gratis atau berbayar?
 
-**A:** MongoDB Community Edition gratis dan open-source. MongoDB Atlas menyediakan free tier (512MB). Untuk fitur enterprise (advanced security, analytics), perlu lisensi berbayar.
+**A:** MongoDB Community Edition gratis dan open-source. MongoDB Atlas menyediakan free tier (512MB). Untuk fitur enterprise (advanced security, analytics), diperlukan lisensi berbayar.
 
 ---
 
-### Q2: Kapan sebaiknya pakai MongoDB vs MySQL?
+### Q2: Kapan sebaiknya menggunakan MongoDB vs MySQL?
 
 **A:**
 - **MongoDB**: Data fleksibel, rapid development, horizontal scaling, real-time apps, content management
-- **MySQL**: Data relasional kompleks, butuh ACID strict, financial transactions, reporting kompleks
+- **MySQL**: Data relasional kompleks, membutuhkan ACID strict, financial transactions, reporting kompleks
 
 ---
 
-### Q3: Apakah MongoDB bisa digunakan untuk transaksi keuangan?
+### Q3: Apakah MongoDB dapat digunakan untuk transaksi keuangan?
 
-**A:** Sejak versi 4.0, MongoDB mendukung multi-document ACID transactions. Namun untuk sistem keuangan kritikal, SQL database masih lebih mature dan proven.
+**A:** Sejak versi 4.0, MongoDB mendukung multi-document ACID transactions. Namun untuk sistem keuangan kritikal, SQL database masih lebih mature dan terbukti keandalannya.
 
 ---
 
 ### Q4: Berapa batas ukuran dokumen MongoDB?
 
-**A:** Maksimal **16MB** per dokumen. Untuk file besar, gunakan **GridFS** yang memecah file menjadi chunks 255KB.
+**A:** Maksimal 16MB per dokumen. Untuk file besar, gunakan GridFS yang memecah file menjadi chunks 255KB.
 
 ---
 
-### Q5: Apa perbedaan `find()` dan `findOne()`?
+### Q5: Apa perbedaan find() dan findOne()?
 
 **A:**
 - `find()`: Mengembalikan array (cursor) dari semua dokumen yang cocok
@@ -5361,9 +5300,9 @@ mongorestore --uri="mongodb://localhost:27017/mydb" ./backup/mydb
 
 ---
 
-### Q8: Mongoose wajib digunakan?
+### Q8: Apakah Mongoose wajib digunakan?
 
-**A:** Tidak. Mongoose adalah ODM opsional. Bisa menggunakan native MongoDB driver langsung. Mongoose memberikan kemudahan: schema validation, middleware, populate, dll. Untuk aplikasi sederhana atau yang butuh performa maksimal, native driver bisa lebih cocok.
+**A:** Tidak. Mongoose adalah ODM opsional. Dapat menggunakan native MongoDB driver secara langsung. Mongoose memberikan kemudahan berupa schema validation, middleware, populate, dan lainnya. Untuk aplikasi sederhana atau yang membutuhkan performa maksimal, native driver dapat lebih cocok.
 
 ---
 
@@ -5379,7 +5318,7 @@ mongoose.connect(uri, {
 });
 
 // Pastikan tidak ada connection leak
-// Selalu close connection saat app shutdown
+// Selalu tutup koneksi saat aplikasi shutdown
 process.on('SIGINT', () => mongoose.connection.close());
 ```
 
@@ -5393,8 +5332,8 @@ process.on('SIGINT', () => mongoose.connection.close());
 3. Export data dari SQL (CSV/JSON)
 4. Transform data sesuai schema baru
 5. Import ke MongoDB (`mongoimport`)
-6. Update application code (query syntax)
-7. Testing menyeluruh
+6. Update kode aplikasi (sintaks query)
+7. Lakukan pengujian menyeluruh
 
 ---
 
@@ -5402,55 +5341,55 @@ process.on('SIGINT', () => mongoose.connection.close());
 
 
 
-# X. REFERENSI & RESOURCES
+# X. REFERENSI DAN SUMBER DAYA
 
-## 10.1 Dokumentasi Official
+## 10.1 Dokumentasi Resmi
 
-| Resource | URL |
-|----------|-----|
+| Sumber | URL |
+|--------|-----|
 | MongoDB Documentation | https://www.mongodb.com/docs/ |
 | MongoDB Manual | https://www.mongodb.com/docs/manual/ |
 | Mongoose Documentation | https://mongoosejs.com/docs/ |
 | MongoDB Node.js Driver | https://www.mongodb.com/docs/drivers/node/current/ |
 | MongoDB Atlas | https://www.mongodb.com/cloud/atlas |
-| MongoDB University (Free Courses) | https://university.mongodb.com/ |
+| MongoDB University (Kursus Gratis) | https://university.mongodb.com/ |
 
 ---
 
-## 10.2 Tools Recommendation
+## 10.2 Rekomendasi Tools
 
-### Database Management
+### Manajemen Database
 
 | Tool | Deskripsi | Platform |
 |------|-----------|----------|
-| **MongoDB Compass** | Official GUI untuk MongoDB | Windows, macOS, Linux |
-| **MongoDB Shell (mongosh)** | CLI interaktif | All platforms |
-| **Studio 3T** | Advanced GUI (free & paid) | Windows, macOS, Linux |
-| **Robo 3T** | Lightweight GUI (free) | Windows, macOS, Linux |
+| **MongoDB Compass** | GUI resmi untuk MongoDB | Windows, macOS, Linux |
+| **MongoDB Shell (mongosh)** | CLI interaktif | Semua platform |
+| **Studio 3T** | GUI lanjutan (gratis dan berbayar) | Windows, macOS, Linux |
+| **Robo 3T** | GUI ringan (gratis) | Windows, macOS, Linux |
 
-### Development Tools
+### Tools Pengembangan
 
 | Tool | Deskripsi |
 |------|-----------|
-| **Postman** | API testing & documentation |
+| **Postman** | Pengujian dan dokumentasi API |
 | **Thunder Client** | REST client extension untuk VS Code |
 | **Nodemon** | Auto-restart server saat file berubah |
-| **dotenv** | Manage environment variables |
-| **Joi / express-validator** | Input validation |
+| **dotenv** | Manajemen environment variables |
+| **Joi / express-validator** | Validasi input |
 | **morgan** | HTTP request logger |
 
-### VS Code Extensions
+### Ekstensi VS Code
 
-| Extension | Fungsi |
-|-----------|--------|
-| MongoDB for VS Code | Browse & query MongoDB langsung dari VS Code |
-| REST Client | Kirim HTTP request dari file `.http` |
+| Ekstensi | Fungsi |
+|----------|--------|
+| MongoDB for VS Code | Browse dan query MongoDB langsung dari VS Code |
+| REST Client | Mengirim HTTP request dari file `.http` |
 | ESLint | JavaScript linting |
 | Prettier | Code formatting |
 
 ---
 
-## 10.3 Learning Resources
+## 10.3 Sumber Pembelajaran
 
 ### Kursus Online (Gratis)
 
@@ -5459,7 +5398,7 @@ process.on('SIGINT', () => mongoose.connection.close());
    - M220JS: MongoDB for JavaScript Developers
    - M320: Data Modeling
 
-2. **freeCodeCamp** - MongoDB & Mongoose tutorial di YouTube
+2. **freeCodeCamp** - MongoDB dan Mongoose tutorial di YouTube
 
 3. **The Net Ninja** - MongoDB playlist di YouTube
 
@@ -5471,7 +5410,7 @@ process.on('SIGINT', () => mongoose.connection.close());
 | Mongoose for Application Development | Simon Holmes |
 | Node.js Design Patterns | Mario Casciaro, Luciano Mammino |
 
-### Artikel & Blog
+### Artikel dan Blog
 
 - MongoDB Blog: https://www.mongodb.com/blog
 - Dev.to MongoDB tag: https://dev.to/t/mongodb
@@ -5479,10 +5418,10 @@ process.on('SIGINT', () => mongoose.connection.close());
 
 ---
 
-## 10.4 Community Links
+## 10.4 Tautan Komunitas
 
-| Platform | Link |
-|----------|------|
+| Platform | Tautan |
+|----------|--------|
 | MongoDB Community Forums | https://www.mongodb.com/community/forums/ |
 | Stack Overflow (tag: mongodb) | https://stackoverflow.com/questions/tagged/mongodb |
 | Reddit r/mongodb | https://www.reddit.com/r/mongodb/ |
@@ -5494,7 +5433,7 @@ process.on('SIGINT', () => mongoose.connection.close());
 
 ## Penutup
 
-Laporan ini telah membahas secara komprehensif tentang MongoDB mulai dari konsep dasar NoSQL, instalasi, integrasi dengan Node.js menggunakan Mongoose, operasi CRUD, advanced topics (aggregation, indexing, relationships), best practices, hingga studi kasus pembuatan REST API. Dengan pemahaman materi ini, diharapkan dapat mengimplementasikan MongoDB dalam pengembangan aplikasi web modern secara efektif dan efisien.
+Laporan ini telah membahas secara komprehensif tentang MongoDB mulai dari konsep dasar NoSQL, instalasi, integrasi dengan Node.js menggunakan Mongoose, operasi CRUD, topik lanjutan (aggregation, indexing, relationships), praktik terbaik, hingga studi kasus pembuatan REST API. Dengan pemahaman materi ini, diharapkan pembaca dapat mengimplementasikan MongoDB dalam pengembangan aplikasi web modern secara efektif dan efisien.
 
 ---
 
